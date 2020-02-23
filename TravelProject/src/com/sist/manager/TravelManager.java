@@ -11,7 +11,7 @@ import com.sist.dao.*;
 import com.sist.vo.*;
 
 public class TravelManager {
-	//textdddd
+	//textddddd
 	
 	// 국내 정보 가져오기 
 	public ArrayList<DomesticVO> domesticData(){
