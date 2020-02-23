@@ -1,0 +1,1844 @@
+<!DOCTYPE html>
+
+<meta charset="UTF-8">
+<div id="wrap">
+	<style>
+.up_close {
+	background: url(//img.tourtips.com/images/common/close_btn_b.png)
+		no-repeat right center;
+	position: absolute;
+	width: 38px;
+	height: 37px;
+	top: 15px;
+	right: 30px;
+	cursor: pointer
+}
+</style>
+	<script>
+function TTNBClick () {
+        setCookie('TTNB_219', '0', '1');
+        $('.ttnb').hide();
+}
+</script>
+	<div class="ttnb">
+		<!--span class="up_close" onclick="TTNBClick();"> </span-->
+
+		<span class="up_close" onclick="TTNBClick();"></span>
+	</div>
+	<!-- header -->
+	<div id="header">
+		<!-- headTop -->
+		<div class="headTop">
+			<span class="logo"> <a href="http://www.tourtips.com"> <img
+					src="//img.tourtips.com/images/pc/logo/origin.gif" alt="투어팁스">
+			</a>
+			</span>
+			<!-- loginArea : 로그인 전 -->
+			<div class="loginArea" style="width: 125px;">
+				<a href="https://www.tourtips.com/ap/members/login/">로그인</a> <span>|</span>
+				<a href="https://www.tourtips.com/ap/members/join/">회원가입</a>
+			</div>
+			<!-- //loginArea -->
+
+			<!-- choiceLanguage -
+		<div class="choiceLanguage">
+			<div class="txt"><img src="//img.tourtips.com/images/cm/flag/flag_korea.gif" alt="한국 flag">한국어</div>
+			<div class="selectLanguage">
+				<ul>
+					<li><a href="http://ww.tourtips.com/"><img src="//img.tourtips.com/images/cm/flag/flag_korea.gif" alt="한국 flag">한국어</a></li>
+					<li class="china"><a href="http://china.tourtips.com/"><img src="//img.tourtips.com/images/cm/flag/flag_china.gif" alt="中文 flag">中文(简体)</a></li>
+				</ul>
+			</div>
+		</div>
+		- //choiceLanguage -->
+
+			<!-- search -->
+			<div id="search">
+				<form method="get"
+					action="http://www.tourtips.com/ap/search/search/">
+					<fieldset>
+						<legend>검색</legend>
+						<span class="round"> <input type="text" name="cseq"
+							title="검색어 입력" tabindex="1" style="ime-mode: active;">
+							<button type="submit" name="search" id="search_btn" title="검색"
+								tabindex="2">검색</button>
+						</span>
+					</fieldset>
+				</form>
+			</div>
+			<!-- //search -->
+
+		</div>
+		<!-- //headTop -->
+
+		<!-- gnb -->
+		<div id="gnb" class="fixed">
+			<div class="gnbIn">
+				<ul>
+					<li class="dest"><a href="http://www.tourtips.com/dest/main/"
+						class="deapth1 " data-title="여행정보">여행정보</a>
+						<div class="deapth2">
+							<ul>
+								<li><a href="http://www.tourtips.com/dest/main/"
+									data-title="여행도시">여행도시</a></li>
+								<li><a href="http://www.tourtips.com/ap/column/list/"
+									data-title="작가 여행기">작가 여행기</a></li>
+								<li><a href="http://www.tourtips.com/ap/video/list/"
+									data-title="테마영상">테마영상</a></li>
+								<li><a href="http://www.tourtips.com/ap/preparation/main/"
+									data-title="여행준비">여행준비</a></li>
+							</ul>
+						</div></li>
+					<li class="community"><a
+						href="http://www.tourtips.com/ap/community/main/" class="deapth1"
+						data-title="커뮤니티">커뮤니티</a>
+						<div class="deapth2">
+							<ul>
+								<li><a href="http://www.tourtips.com/ap/tboard/community/"
+									data-title="전체기">전체</a></li>
+								<li><a href="http://www.tourtips.com/ap/tboard/tour_talk/"
+									data-title="여행후기&amp;팁">여행후기&amp;팁</a></li>
+								<li><a href="http://www.tourtips.com/ap/tboard/qna/"
+									data-title="Q&amp;A<">Q&amp;A</a></li>
+								<!-- <li><a href="http://www.tourtips.com/ap/tboard/pic_talk/" data-title="찰칵!인증샷">찰칵!인증샷</a></li> -->
+								<li><a href="http://www.tourtips.com/ap/tboard/any_talk/"
+									data-title="아무거나 토크">아무거나 토크</a></li>
+								<li><a
+									href="http://www.tourtips.com/ap/tboard/community/?my=a"
+									data-title="내 글 보기">내 글 보기</a></li>
+							</ul>
+						</div></li>
+					<li class="book"><a
+						href="http://www.tourtips.com/ap/guidebook/main/" class="deapth1"
+						data-title="가이드북">가이드북</a>
+						<div class="deapth2">
+							<ul>
+								<li><a href="http://www.tourtips.com/ap/guidebook/main/"
+									data-title="투어팁스 가이드북">가이드북</a></li>
+								<li><a href="http://www.tourtips.com/ap/mytour/main/"
+									data-title="여행자료실">여행자료실</a></li>
+							</ul>
+						</div></li>
+					<li class="ticket"><a
+						href="https://www.mohaji.com/?a=MHJ-P-EXT190711000000"
+						class="deapth1" target="_blank" data-title="티켓/투어">티켓/투어<span
+							class="mohaji">mohaji</span></a>
+						<div class="deapth2">
+							<ul>
+								<li><a
+									href="https://www.mohaji.com/?a=MHJ-P-EXT190711000000"
+									target="_blank" data-title="인기 여행도시">전체</a></li>
+								<li><a
+									href="https://www.mohaji.com/ko/product/osaka-jp/?a=MHJ-P-EXT190711000000"
+									target="_blank" data-title="오사카">오사카</a></li>
+								<li><a
+									href="https://www.mohaji.com/ko/product/fukuoka-jp/?a=MHJ-P-EXT190711000000"
+									target="_blank" data-title="후쿠오카">후쿠오카</a></li>
+								<li><a
+									href="https://www.mohaji.com/ko/product/bangkok-th/?a=MHJ-P-EXT190711000000"
+									target="_blank" data-title="방콕">방콕</a></li>
+								<li><a
+									href="https://www.mohaji.com/ko/product/da-nang-vn/?a=MHJ-P-EXT190711000000"
+									target="_blank" data-title="다낭">다낭</a></li>
+								<li><a
+									href="https://www.mohaji.com/ko/product/taipei-tw/?a=MHJ-P-EXT190711000000"
+									target="_blank" data-title="타이베이">타이베이</a></li>
+								<li><a
+									href="https://www.mohaji.com/ko/product/hawaii-us/?a=MHJ-P-EXT190711000000"
+									target="_blank" data-title="하와이">하와이</a></li>
+								<li><a
+									href="https://www.mohaji.com/ko/product/sydney-au/?a=MHJ-P-EXT190711000000"
+									target="_blank" data-title="시드니">시드니</a></li>
+								<li><a
+									href="https://www.mohaji.com/ko/product/jeju-kr/?a=MHJ-P-EXT190711000000"
+									target="_blank" data-title="제주">제주</a></li>
+
+							</ul>
+						</div></li>
+					<li class="air"><a
+						href="http://www.tourtips.com/ap/flights/main/" class="deapth1"
+						data-title="항공">항공</a>
+						<div class="deapth2">
+							<ul>
+								<li><a href="http://www.tourtips.com/ap/flights/main/"
+									data-title="최저가 항공 검색">최저가 항공 검색</a></li>
+								<!-- <li><a href="http://www.tourtips.com/ap/flights/special/" data-title="특가항공">특가항공</a></li> -->
+								<!-- <li><a href="http://www.tourtips.com/ap/tevent/main/" data-title="무료항공 이벤트">무료항공 이벤트</a></li> -->
+							</ul>
+						</div></li>
+					<li class="hotel"><a
+						href="http://www.tourtips.com/ap/lodge/compare_main/"
+						class="deapth1" data-title="호텔">호텔</a>
+						<div class="deapth2">
+							<ul>
+								<li><a
+									href="http://www.tourtips.com/ap/lodge/compare_main/"
+									data-title="최저가 호텔 검색">최저가 호텔 검색</a></li>
+								<li><a href="http://www.tourtips.com/ap/lodge/main/"
+									data-title="추천숙박">추천숙박</a></li>
+								<!-- <li><a href="http://www.tourtips.com/ap/tevent/main/" data-title="무료호텔 이벤트">무료호텔 이벤트</a></li> -->
+							</ul>
+						</div></li>
+					<li class="event"><a
+						href="http://www.tourtips.com/ap/tevent/main/" class="deapth1"
+						data-title="무료 이벤트">무료 이벤트</a>
+						<div class="deapth2">
+							<ul>
+								<li><a href="http://www.tourtips.com/ap/tevent/main/"
+									data-title="진행 이벤트">진행 이벤트</a></li>
+								<li><a
+									href="http://www.tourtips.com/ap/tevent/main/?state=end"
+									data-title="당첨자 발표">당첨자 발표</a></li>
+							</ul>
+						</div></li>
+				</ul>
+			</div>
+			<span class="bg">
+				<!-- for ui -->
+			</span>
+
+			<div class="adv bannerZone"></div>
+		</div>
+		<!-- //gnb -->
+
+
+	</div>
+	<!-- //header -->
+
+	<hr>
+
+
+	<!-- main_visual -->
+	<div class="main_visual">
+		<!--/* 투어팁스 광고 Javascript Tag v3.0.3-dev */-->
+		<div id="floating_banner">
+			<!--/* 투어팁스 광고 Javascript Tag v3.0.3-dev */-->
+
+		</div>
+		<script>
+//배너 하루동안 열지 않기
+function floatBanner () {
+	if($('#floating_banner a img').size() >0){
+	    $('#floating_banner').prepend('<img class="floating_banner_close" src="//img.tourtips.com/images/events/floating_banner_close.png" />');
+	}
+	$(".floating_banner_close").click(function(){
+		setCookie("event_mainF1",'1',1);
+		$("#floating_banner").hide();
+	});
+}
+</script>
+		<div class="anythingSlider anythingSlider-default"
+			style="width: 1090px; height: 590px;">
+			<div class="anythingWindow">
+				<ul id="main_visual" class="anythingBase fade"
+					style="width: 1090px; left: 0px;">
+					<li class="panel"
+						style="width: 1090px; height: 590px; opacity: 0; visibility: hidden;"><div
+							class="bg"
+							style="background-image: url(&quot;//img.tourtips.com/images/pc/main/bg/bg_main_01.jpg?u=201812&quot;); width: 100%; height: 100%;"></div></li>
+					<li class="panel"
+						style="width: 1090px; height: 590px; opacity: 0; visibility: hidden;"><div
+							class="bg"
+							style="background-image: url(&quot;//img.tourtips.com/images/pc/main/bg/bg_main_02.jpg?u=201812&quot;); width: 100%; height: 100%;"></div></li>
+					<li class="panel"
+						style="width: 1090px; height: 590px; opacity: 0; visibility: hidden;"><div
+							class="bg"
+							style="background-image: url(&quot;//img.tourtips.com/images/pc/main/bg/bg_main_03.jpg?u=201812&quot;); width: 100%; height: 100%;"></div></li>
+					<li class="panel activePage"
+						style="width: 1090px; height: 590px; opacity: 1; visibility: visible;"><div
+							class="bg"
+							style="background-image: url(&quot;//img.tourtips.com/images/pc/main/bg/bg_main_04.jpg?u=201812&quot;); width: 100%; height: 100%;"></div></li>
+				</ul>
+			</div>
+			<div class="anythingControls" style="display: block;">
+				<span class="arrow back" style="display: inline;"><a href="#"><span>«</span></a></span>
+				<ul class="thumbNav">
+					<li class="first"><a class="panel1" href="#"><span>1</span></a></li>
+					<li><a class="panel2" href="#"><span>2</span></a></li>
+					<li><a class="panel3" href="#"><span>3</span></a></li>
+					<li class="last"><a class="panel4 cur" href="#"><span>4</span></a></li>
+				</ul>
+				<span class="arrow forward" style="display: inline;"><a
+					href="#"><span>»</span></a></span>
+			</div>
+		</div>
+		<div class="default_copy">
+			<div class="in">
+				<strong>믿을 수 있는 여행 팁, <em>투어팁스</em></strong>
+				<p>어디로 떠날까요?</p>
+			</div>
+			<span class="cover"></span>
+		</div>
+		<span class="ie8"></span>
+	</div>
+	<!-- //main_visual -->
+	<!-- city_quickmenu -->
+	<div class="city_quickmenu">
+		<ul>
+			<li class="asia"><span></span>아시아</li>
+			<li class="southeastAsia"><span></span>동남아</li>
+			<li class="europe"><span></span>유럽</li>
+			<li class="americas"><span></span>미주</li>
+			<li class="southpacific"><span></span>남태평양</li>
+			<li class="korea"><span></span>대한민국</li>
+		</ul>
+		<div class="cityListLayer" style="display: none;">
+			<div class="tourCityBox">
+				<div class="cityList">
+					<span class="area">아시아</span><a
+						href="http://www.tourtips.com/dest/city/1001_hongkong"
+						data-id="1001" data-code="HKG" data-eng="hongkong" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_HKG.gif" alt="홍콩 국기">홍콩</a><a
+						href="http://www.tourtips.com/dest/city/1008_macau" data-id="1008"
+						data-code="MFM" data-eng="macau" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_MFM.gif" alt="마카오 국기">마카오</a><a
+						href="http://www.tourtips.com/dest/city/1002_osaka" data-id="1002"
+						data-code="OSA" data-eng="osaka" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_OSA.gif" alt="오사카 국기">오사카</a><a
+						href="http://www.tourtips.com/dest/city/1003_fukuoka"
+						data-id="1003" data-code="FUK" data-eng="fukuoka" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_FUK.gif" alt="후쿠오카 국기">후쿠오카</a><a
+						href="http://www.tourtips.com/dest/city/1005_tokyo" data-id="1005"
+						data-code="TYO" data-eng="tokyo" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_TYO.gif" alt="도쿄 국기">도쿄</a><a
+						href="http://www.tourtips.com/dest/city/1051_okinawa"
+						data-id="1051" data-code="OKA" data-eng="okinawa" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_OKA.gif" alt="오키나와 국기">오키나와</a><a
+						href="http://www.tourtips.com/dest/city/1004_taipei"
+						data-id="1004" data-code="TPE" data-eng="taipei" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_TPE.gif" alt="타이베이 국기">타이베이</a><a
+						href="http://www.tourtips.com/dest/city/1034_kaohsiung"
+						data-id="1034" data-code="KHH" data-eng="kaohsiung"
+						data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_KHH.gif" alt="가오슝 국기">가오슝</a><a
+						href="http://www.tourtips.com/dest/city/1035_taichung"
+						data-id="1035" data-code="TXG" data-eng="taichung" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_TXG.gif" alt="타이중 국기">타이중</a><a
+						href="http://www.tourtips.com/dest/city/1006_beijing"
+						data-id="1006" data-code="BJS" data-eng="beijing" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_BJS.gif" alt="베이징 국기">베이징</a><a
+						href="http://www.tourtips.com/dest/city/1007_shanghai"
+						data-id="1007" data-code="SHA" data-eng="shanghai" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_SHA.gif" alt="상하이 국기">상하이</a><a
+						href="http://www.tourtips.com/dest/city/1033_qingdao"
+						data-id="1033" data-code="TAO" data-eng="qingdao" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_TAO.gif" alt="칭다오 국기">칭다오</a><a
+						href="http://www.tourtips.com/dest/city/1039_huangshan"
+						data-id="1039" data-code="HSH" data-eng="huangshan"
+						data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_HSH.gif" alt="황산 국기">황산</a><a
+						href="http://www.tourtips.com/dest/city/1045_zhangjiajie"
+						data-id="1045" data-code="DYG" data-eng="zhangjiajie"
+						data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_DYG.gif" alt="장가계 국기">장가계</a><a
+						href="http://www.tourtips.com/dest/city/1048_xian" data-id="1048"
+						data-code="SIA" data-eng="xian" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_SIA.gif" alt="서안 국기">서안</a>
+				</div>
+				<div class="cityList">
+					<span class="area">동남아시아</span><a
+						href="http://www.tourtips.com/dest/city/1009_singapore"
+						data-id="1009" data-code="SIN" data-eng="singapore"
+						data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_SIN.gif" alt="싱가포르 국기">싱가포르</a><a
+						href="http://www.tourtips.com/dest/city/1010_bangkok"
+						data-id="1010" data-code="BKK" data-eng="bangkok" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_BKK.gif" alt="방콕 국기">방콕</a><a
+						href="http://www.tourtips.com/dest/city/1013_phuket"
+						data-id="1013" data-code="HKT" data-eng="phuket" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_HKT.gif" alt="푸껫 국기">푸껫</a><a
+						href="http://www.tourtips.com/dest/city/1054_huahin"
+						data-id="1054" data-code="HHQ" data-eng="huahin" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_HHQ.gif" alt="후아힌 국기">후아힌</a><a
+						href="http://www.tourtips.com/dest/city/1012_cebu" data-id="1012"
+						data-code="CEB" data-eng="cebu" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_CEB.gif" alt="세부 국기">세부</a><a
+						href="http://www.tourtips.com/dest/city/1011_boracay"
+						data-id="1011" data-code="KLO" data-eng="boracay" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_KLO.gif" alt="보라카이 국기">보라카이</a><a
+						href="http://www.tourtips.com/dest/city/1043_manila"
+						data-id="1043" data-code="MNL" data-eng="manila" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_MNL.gif" alt="마닐라 국기">마닐라</a><a
+						href="http://www.tourtips.com/dest/city/1032_kotakinabalu"
+						data-id="1032" data-code="BKI" data-eng="kotakinabalu"
+						data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_BKI.gif"
+						alt="코타 키나발루 국기">코타 키나발루</a><a
+						href="http://www.tourtips.com/dest/city/1040_penang"
+						data-id="1040" data-code="PEN" data-eng="penang" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_PEN.gif" alt="페낭 국기">페낭</a><a
+						href="http://www.tourtips.com/dest/city/1041_kualalumpur"
+						data-id="1041" data-code="KUL" data-eng="kualalumpur"
+						data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_KUL.gif"
+						alt="쿠알라룸푸르 국기">쿠알라룸푸르</a><a
+						href="http://www.tourtips.com/dest/city/1042_laos" data-id="1042"
+						data-code="LA1" data-eng="laos" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_LA1.gif" alt="라오스 국기">라오스</a><a
+						href="http://www.tourtips.com/dest/city/1046_danang"
+						data-id="1046" data-code="DAD" data-eng="danang" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_DAD.gif" alt="다낭 국기">다낭</a><a
+						href="http://www.tourtips.com/dest/city/1049_hanoi" data-id="1049"
+						data-code="HAN" data-eng="hanoi" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_HAN.gif" alt="하노이 국기">하노이</a><a
+						href="http://www.tourtips.com/dest/city/1050_hochiminh"
+						data-id="1050" data-code="SGN" data-eng="hochiminh"
+						data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_SGN.gif" alt="호치민 국기">호치민</a><a
+						href="http://www.tourtips.com/dest/city/1055_nhatrang"
+						data-id="1055" data-code="NHA" data-eng="nhatrang" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_NHA.gif" alt="나트랑 국기">나트랑</a><a
+						href="http://www.tourtips.com/dest/city/1056_siemreap"
+						data-id="1056" data-code="REP" data-eng="siemreap" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_REP.gif" alt="씨엠립 국기">씨엠립</a>
+				</div>
+				<div class="cityList">
+					<span class="area">유럽</span><a
+						href="http://www.tourtips.com/dest/city/1014_paris" data-id="1014"
+						data-code="PAR" data-eng="paris" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_PAR.gif" alt="파리 국기">파리</a><a
+						href="http://www.tourtips.com/dest/city/1015_rome" data-id="1015"
+						data-code="ROM" data-eng="rome" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_ROM.gif" alt="로마 국기">로마</a><a
+						href="http://www.tourtips.com/dest/city/1016_london"
+						data-id="1016" data-code="LON" data-eng="london" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_LON.gif" alt="런던 국기">런던</a><a
+						href="http://www.tourtips.com/dest/city/1017_barcelona"
+						data-id="1017" data-code="BCN" data-eng="barcelona"
+						data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_BCN.gif"
+						alt="바르셀로나 국기">바르셀로나</a><a
+						href="http://www.tourtips.com/dest/city/1018_croatia"
+						data-id="1018" data-code="HR1" data-eng="croatia" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_HR1.gif"
+						alt="크로아티아 국기">크로아티아</a><a
+						href="http://www.tourtips.com/dest/city/1019_istanbul"
+						data-id="1019" data-code="IST" data-eng="istanbul" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_IST.gif" alt="이스탄불 국기">이스탄불</a><a
+						href="http://www.tourtips.com/dest/city/1052_vladivostok"
+						data-id="1052" data-code="VVO" data-eng="vladivostok"
+						data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_VVO.gif"
+						alt="블라디보스토크 국기">블라디보스토크</a>
+				</div>
+				<div class="cityList">
+					<span class="area">미주</span><a
+						href="http://www.tourtips.com/dest/city/1021_newyork"
+						data-id="1021" data-code="NYC" data-eng="newyork" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_NYC.gif" alt="뉴욕 국기">뉴욕</a><a
+						href="http://www.tourtips.com/dest/city/1020_hawaii"
+						data-id="1020" data-code="Z01" data-eng="hawaii" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_Z01.gif" alt="하와이 국기">하와이</a><a
+						href="http://www.tourtips.com/dest/city/1022_westernamerica"
+						data-id="1022" data-code="Z50" data-eng="westernamerica"
+						data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_Z50.gif" alt="미서부 국기">미서부</a>
+				</div>
+				<div class="cityList">
+					<span class="area">남태평양</span><a
+						href="http://www.tourtips.com/dest/city/1024_guam" data-id="1024"
+						data-code="GUM" data-eng="guam" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_GUM.gif" alt="괌 국기">괌</a><a
+						href="http://www.tourtips.com/dest/city/1023_sydney"
+						data-id="1023" data-code="SYD" data-eng="sydney" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_SYD.gif" alt="시드니 국기">시드니</a>
+				</div>
+				<div class="cityList">
+					<span class="area">대한민국</span><a
+						href="http://www.tourtips.com/dest/city/1026_jeju" data-id="1026"
+						data-code="CJU" data-eng="jeju" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_CJU.gif" alt="제주 국기">제주</a><a
+						href="http://www.tourtips.com/dest/city/1027_jeonju"
+						data-id="1027" data-code="A53" data-eng="jeonju" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_A53.gif" alt="전주 국기">전주</a><a
+						href="http://www.tourtips.com/dest/city/1028_gyeongju"
+						data-id="1028" data-code="KJO" data-eng="gyeongju" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_KJO.gif" alt="경주 국기">경주</a><a
+						href="http://www.tourtips.com/dest/city/1030_suwon" data-id="1030"
+						data-code="A71" data-eng="suwon" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_A71.gif" alt="수원 국기">수원</a><a
+						href="http://www.tourtips.com/dest/city/1031_hwaseong"
+						data-id="1031" data-code="AI2" data-eng="hwaseong" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_AI2.gif" alt="화성 국기">화성</a><a
+						href="http://www.tourtips.com/dest/city/1025_ansandaebudo"
+						data-id="1025" data-code="K01" data-eng="ansandaebudo"
+						data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_K01.gif"
+						alt="안산 · 대부도 국기">안산 · 대부도</a><a
+						href="http://www.tourtips.com/dest/city/1037_busan" data-id="1037"
+						data-code="PUS" data-eng="busan" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_PUS.gif" alt="부산 국기">부산</a><a
+						href="http://www.tourtips.com/dest/city/1036_seoul" data-id="1036"
+						data-code="SEL" data-eng="seoul" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_SEL.gif" alt="서울 국기">서울</a><a
+						href="http://www.tourtips.com/dest/city/1038_gangwon"
+						data-id="1038" data-code="KRG" data-eng="gangwon" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_KRG.gif" alt="강원 국기">강원</a><a
+						href="http://www.tourtips.com/dest/city/1047_incheonjunggu"
+						data-id="1047" data-code="K02" data-eng="incheonjunggu"
+						data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_K02.gif"
+						alt="인천 중구 국기">인천 중구</a><a
+						href="http://www.tourtips.com/dest/city/1053_ganghwa"
+						data-id="1053" data-code="GHA" data-eng="ganghwa" data-status="L"><img
+						src="//img.tourtips.com/images/cm/flag/flag_GHA.gif" alt="강화 국기">강화</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //city_quickmenu -->
+	<!-- search_section -->
+	<div class="search_section">
+		<div class="search_tab">
+			<ul>
+				<li class="hotel"><a href="" class="on"><i></i>호텔</a></li>
+				<li class="air"><a href=""><i></i>항공</a></li>
+			</ul>
+		</div>
+		<!-- 	<style type="text/css">
+		td.date-range-selected:first{background:#e6f8f4 url('//img.tourtips.com/images/pc/dest_v2/bg_startDate.png') no-repeat !important;}
+		td.date-range-selected:last{background:#e6f8f4 url('//img.tourtips.com/images/pc/dest_v2/bg_endDate.png') no-repeat !important;}
+	</style> -->
+		<div class="search_conts">
+			<div class="search_box" style="display: block;">
+				<div class="searchHotel" id="mainHotel">
+					<form method="post" action="" class="searchHotelForm">
+
+						<fieldset>
+
+							<legend>호텔 검색</legend>
+
+							<!-- hotelTop -->
+							<div class="hotelTop">
+
+								<!-- destiny -->
+								<div class="destiny">
+									<label for="originplace">목적지</label>
+									<div class="inputWrap">
+										<input type="text" id="arrivalPlace"
+											placeholder="도시, 지역, 구역 혹은 호텔명" title="도시, 지역, 구역 혹은 호텔명"
+											autocomplete="off" tabindex="11">
+										<button type="button" class="btn_reset">목적지 삭제</button>
+										<!-- searchHotelList -->
+										<div class="searchHotelList" id="autolist"></div>
+										<!-- //searchHotelList -->
+
+									</div>
+								</div>
+								<!-- //destiny -->
+
+								<!-- dateArea -->
+								<div class="dateArea">
+									<div class="date" id="checkinform">
+										<label for="checkin">체크인</label>
+										<div class="inputWrap">
+											<input type="text" id="checkin" name="checkin"
+												placeholder="날짜 선택" title="날짜 선택" autocomplete="off"
+												readonly="readonly" class="hasDatepicker" tabindex="12">
+											<button type="button" class="ui-datepicker-trigger"></button>
+										</div>
+									</div>
+									<div class="date arrival" id="checkoutform">
+										<label for="checkout">체크아웃</label>
+										<div class="inputWrap">
+											<input type="text" id="checkout" name="checkout"
+												placeholder="날짜 선택" title="날짜 선택" autocomplete="off"
+												readonly="readonly" class="hasDatepicker" tabindex="13">
+											<button type="button" class="ui-datepicker-trigger"></button>
+										</div>
+									</div>
+								</div>
+								<!-- //dateArea -->
+
+								<!-- roomArea -->
+								<div class="roomArea">
+									<strong class="title">객실</strong>
+									<div class="selectWrap">
+										<input type="text" id="room" title="객실수 1 성인 2명"
+											placeholder="객실수 1 성인 2명" value="객실수 1 성인 2명"
+											data-value="{rooms:1,adults_1:2}" autocomplete="off"
+											readonly="readonly" tabindex="14">
+										<ul class="otherList" name="room_select" id="room_select">
+											<li data-value="{rooms:1,adults_1:1}">객실수 1 성인 1명</li>
+											<li data-value="{rooms:1,adults_1:2}">객실수 1 성인 2명</li>
+											<li data-value="{rooms:1,adults_1:3}">객실수 1 성인 3명</li>
+											<li data-value="{rooms:1,adults_1:4}">객실수 1 성인 4명</li>
+											<li data-value="{rooms:2,adults_1:1,adults_2:1}">객실수 2
+												성인 2명</li>
+											<li data-value="opt">옵션추가</li>
+										</ul>
+									</div>
+
+									<div class="addOption addOption_tmp" style="display: none;">
+										<!-- addBox -->
+										<div class="addBox">
+											<strong class="title">객실 1개</strong>
+											<div class="selectWrap adult">
+												<input type="text" id="adult" name="adult" title="성인 0"
+													placeholder="성인 0" value="성인 0" data-value="0"
+													autocomplete="off" readonly="readonly">
+												<ul class="roomList" name="adult_select">
+													<li data-value="0">성인 0</li>
+													<li data-value="1">성인 1</li>
+													<li data-value="2">성인 2</li>
+													<li data-value="3">성인 3</li>
+													<li data-value="4">성인 4</li>
+													<li data-value="5">성인 5</li>
+													<li data-value="6">성인 6</li>
+													<li data-value="7">성인 7</li>
+													<li data-value="8">성인 8</li>
+													<li data-value="9">성인 9</li>
+													<li data-value="10">성인 10</li>
+												</ul>
+											</div>
+											<div class="selectWrap">
+												<input type="text" id="child" name="child" title="어린이 0"
+													placeholder="어린이 0" value="어린이 0" data-value="0"
+													autocomplete="off" readonly="readonly">
+												<ul class="roomList" name="child_select">
+													<li data-value="0">어린이 0</li>
+													<li data-value="1">어린이 1</li>
+													<li data-value="2">어린이 2</li>
+													<li data-value="3">어린이 3</li>
+													<li data-value="4">어린이 4</li>
+												</ul>
+											</div>
+											<div class="addChild" style="display: none;">
+												<div class="inputWrap inputWrap_tmp" style="display: none;">
+													<input type="text" name="age_tmp" class="age" maxlength="2"
+														placeholder="어린이 나이" autocomplete="off">
+												</div>
+											</div>
+											<button type="button" class="ctrBtn">- 접기</button>
+										</div>
+										<!-- //addBox -->
+									</div>
+									<button type="button" class="ctrBtn ctrBtnAdd"
+										style="display: block;">+ 객실 더하기</button>
+								</div>
+								<!-- //roomArea -->
+
+								<!-- //hotelTop -->
+							</div>
+
+							<!-- hotelBottom -->
+							<div class="hotelBottom">
+								<div class="chooseOption">
+									<label for="_noDate">숙박 예정일 미정</label> <input type="checkbox"
+										name="_noDate" id="noDate" autocomplete="off">
+								</div>
+								<div class="searchBtn">
+									<button type="button" id="btnHotelSearch"
+										class="btnFlightsSearch" tabindex="15">검색</button>
+								</div>
+								<p class="warning" style="display: none;">체크아웃 날짜가 체크인 날짜보다
+									뒤에 있는지 확인해 보세요!</p>
+							</div>
+							<!-- //hotelBottom -->
+
+						</fieldset>
+
+					</form>
+				</div>
+
+
+				<script type="text/javascript"
+					src="//img.tourtips.com/js/util/hotel.search.v2.js?v=00023528"></script>
+				<script>
+
+$(document).ready(function(){
+    hotels_search_lib.init('mainHotel');
+    $(function() {
+        //숙박 예정일 미정
+        $(".hotelBottom .chooseOption label").on("click", function() {
+            $(this).toggleClass("on");
+        });
+        $('.btn_reset').on("click", function(e) {
+            $('#arrivalPlace').val("");
+        });
+
+
+    })
+});
+
+
+</script>
+			</div>
+			<div class="search_box">
+
+				<div class="searchAir" id="main">
+
+					<form method="post" action="">
+
+						<fieldset>
+
+							<legend>항공권 검색</legend>
+
+							<!-- airTop -->
+							<div class="airTop">
+
+								<!-- place -->
+								<div class="place">
+									<div class="flight">
+										<label for="originplace">출발지</label>
+										<div class="inputWrap">
+											<input type="text" id="originplace" placeholder="도시명"
+												title="도시명" data-value="ICN" data-query="인천국제공항"
+												value="인천국제공항(ICN)" autocomplete="off" tabindex="1">
+											<ul class="searchList" id="originplace_sel"></ul>
+										</div>
+									</div>
+									<div class="flight destination">
+										<label for="destinationplace">도착지</label>
+										<div class="inputWrap">
+											<input type="text" id="destinationplace" placeholder="도시명"
+												title="도시명" data-value="" data-query="" autocomplete="off"
+												tabindex="2" value="">
+											<ul class="searchList" id="destinationplace_sel"></ul>
+										</div>
+									</div>
+									<button type="button" title="출발지, 도착지 바꾸기" class="replace"
+										tabindex="3"></button>
+								</div>
+								<!-- //place -->
+
+								<!-- dateArea -->
+								<div class="dateArea">
+									<div class="date" id="start">
+										<label for="outbounddate">출발일</label>
+										<div class="inputWrap">
+											<input type="text" id="outbounddate" name="outbounddate"
+												placeholder="날짜 선택" title="날짜 선택" autocomplete="off"
+												readonly="readonly" tabindex="4" class="hasDatepicker">
+											<button type="button" class="ui-datepicker-trigger"></button>
+										</div>
+									</div>
+									<div class="date arrival" id="arrival">
+										<label for="inbounddate">도착일</label>
+										<div class="inputWrap">
+											<input type="text" id="inbounddate" placeholder="날짜 선택"
+												title="날짜 선택" autocomplete="off" readonly="readonly"
+												tabindex="5" class="hasDatepicker">
+											<button type="button" class="ui-datepicker-trigger"></button>
+										</div>
+									</div>
+								</div>
+								<!-- //dateArea -->
+
+								<!-- guestArea -->
+								<div class="guestArea">
+									<strong class="title">인원</strong>
+									<div class="selectWrap ">
+										<input type="text" id="adults" title="성인 수" placeholder="성인 1"
+											value="성인 1" data-value="1" autocomplete="off"
+											readonly="readonly" tabindex="6">
+										<ul id="adults_sel" class="otherList">
+											<li data-value="0">성인 0</li>
+											<li data-value="1">성인 1</li>
+											<li data-value="2">성인 2</li>
+											<li data-value="3">성인 3</li>
+											<li data-value="4">성인 4</li>
+											<li data-value="5">성인 5</li>
+											<li data-value="6">성인 6</li>
+											<li data-value="7">성인 7</li>
+											<li data-value="8">성인 8</li>
+										</ul>
+									</div>
+									<div class="selectWrap">
+										<input type="text" id="children" title="아동 0"
+											placeholder="아동 0" value="아동 0" autocomplete="off"
+											readonly="readonly" tabindex="7">
+										<ul id="children_sel" class="otherList">
+											<li data-value="0">아동 0</li>
+											<li data-value="1">아동 1</li>
+											<li data-value="2">아동 2</li>
+											<li data-value="3">아동 3</li>
+											<li data-value="4">아동 4</li>
+											<li data-value="5">아동 5</li>
+											<li data-value="6">아동 6</li>
+											<li data-value="7">아동 7</li>
+											<li data-value="8">아동 8</li>
+										</ul>
+									</div>
+									<div class="selectWrap">
+										<input type="text" id="infants" title="유아 0"
+											placeholder="유아 0" value="유아 0" autocomplete="off"
+											readonly="readonly" tabindex="8">
+										<ul id="infants_sel" class="otherList">
+											<li data-value="0">유아 0</li>
+											<li data-value="1">유아 1</li>
+											<li data-value="2">유아 2</li>
+											<li data-value="3">유아 3</li>
+											<li data-value="4">유아 4</li>
+											<li data-value="5">유아 5</li>
+											<li data-value="6">유아 6</li>
+											<li data-value="7">유아 7</li>
+											<li data-value="8">유아 8</li>
+										</ul>
+									</div>
+								</div>
+								<!-- //guestArea -->
+
+								<!-- //airTop -->
+							</div>
+
+							<!-- airBottom -->
+							<div class="airBottom">
+								<div class="chooseOption">
+									<label for="round" class="on cur" tabindex="9" id="roundRabel">왕복</label>
+									<input type="radio" name="flightOption" id="round" checked=""
+										autocomplete="off"> <label for="oneway" tabindex="10">편도</label>
+									<input type="radio" name="flightOption" id="oneway"
+										autocomplete="off">
+								</div>
+								<div class="searchBtn">
+									<!-- <input type="button" value="초기화" id="btnFlightsReset" class="resetBtn" tabindex="11"> -->
+									<button type="button" id="btnFlightsSearch"
+										class="btnFlightsSearch" tabindex="10">검색</button>
+								</div>
+								<p class="warning" style="display: none;">체크아웃 날짜가 체크인 날짜보다
+									뒤에 있는지 확인해 보세요!</p>
+							</div>
+							<!-- //airBottom -->
+
+						</fieldset>
+
+					</form>
+				</div>
+				<!-- //airSearchForm -->
+				<script type="text/javascript"
+					src="//img.tourtips.com/js/util/flight.search.v2.js?v=00023528"></script>
+				<script>
+$(document).ready(function(){
+	flights_search_lib.init('main');
+});
+</script>
+			</div>
+		</div>
+	</div>
+	<!-- //search_section -->
+	<!-- mainAd -->
+	<div id="mainAd">
+		<div class="anythingSlider anythingSlider-default activeSlider"
+			style="width: 1090px; height: 71px;">
+			<div class="anythingWindow">
+				<ul id="slideAd" class="anythingBase horizontal"
+					style="left: -2180px; width: 5450px;">
+					<li class="panel cloned" style="width: 1090px; height: 71px;"><a
+						href="//ads.tourtips.com/www/delivery/ck.php?oaparams=2__bannerid=1916__zoneid=309__cb=ae204c703d__oadest=https%3A%2F%2Fwww.simpltouch.com%2FMohaji%2FInsurance%2FSimpleSelect.aspx"
+						target="_blank" disabled="disabled" name=""><img
+							src="//img.tourtips.com/wimg/advertise/images/8f18c7039bd269be7807718a4bf67542.jpg"
+							width="1090" height="70" alt="" title="" border="0"></a>
+					<div style="position: absolute; left: 0px; top: 0px; display: none">
+							<img
+								src="//ads.tourtips.com/www/delivery/lg.php?bannerid=1916&amp;campaignid=400&amp;zoneid=309&amp;loc=http%3A%2F%2Fwww.tourtips.com%2F&amp;referer=https%3A%2F%2Fwww.google.com%2F&amp;cb=ae204c703d"
+								width="0" height="0" alt="" style="width: 0px; height: 0px;">
+						</div></li>
+					<li id="adsvr_205" class="panel"
+						style="width: 1090px; height: 71px;"><a
+						href="//ads.tourtips.com/www/delivery/ck.php?oaparams=2__bannerid=2038__zoneid=205__cb=461283b41d__oadest=https%3A%2F%2Fwww.hanatour.com%2Fasp%2Fevent%2Fpkgpeople%2Fpp-17000.asp"
+						target="_blank"><img
+							src="//img.tourtips.com/wimg/advertise/images/b413f1c19530967f236dec748972d2da.jpg"
+							width="1090" height="70" alt="" title="" border="0"></a>
+					<div id="beacon_461283b41d"
+							style="position: absolute; left: 0px; top: 0px; display: none">
+							<img
+								src="//ads.tourtips.com/www/delivery/lg.php?bannerid=2038&amp;campaignid=431&amp;zoneid=205&amp;loc=http%3A%2F%2Fwww.tourtips.com%2F&amp;referer=https%3A%2F%2Fwww.google.com%2F&amp;cb=461283b41d"
+								width="0" height="0" alt="" style="width: 0px; height: 0px;">
+						</div></li>
+					<li id="adsvr_239" class="panel activePage"
+						style="width: 1090px; height: 71px;"><a
+						href="//ads.tourtips.com/www/delivery/ck.php?oaparams=2__bannerid=2051__zoneid=239__cb=3175ce3d4f__oadest=https%3A%2F%2Fwww.mohaji.com%2Fko%2Fcampaign%2Fnswsydney%3Futm_source%3Dtourtips%26utm_medium%3Dbanner%26utm_campaign%3Dnswsydney"
+						target="_blank"><img
+							src="//img.tourtips.com/wimg/advertise/images/342a7a86a1cc208159cea7627b6cc388.jpg"
+							width="1090" height="70" alt="" title="" border="0"></a>
+					<div id="beacon_3175ce3d4f"
+							style="position: absolute; left: 0px; top: 0px; display: none">
+							<img
+								src="//ads.tourtips.com/www/delivery/lg.php?bannerid=2051&amp;campaignid=434&amp;zoneid=239&amp;loc=http%3A%2F%2Fwww.tourtips.com%2F&amp;referer=https%3A%2F%2Fwww.google.com%2F&amp;cb=3175ce3d4f"
+								width="0" height="0" alt="" style="width: 0px; height: 0px;">
+						</div></li>
+
+					<li id="adsvr_309" class="panel"
+						style="width: 1090px; height: 71px;"><a
+						href="//ads.tourtips.com/www/delivery/ck.php?oaparams=2__bannerid=1916__zoneid=309__cb=ae204c703d__oadest=https%3A%2F%2Fwww.simpltouch.com%2FMohaji%2FInsurance%2FSimpleSelect.aspx"
+						target="_blank"><img
+							src="//img.tourtips.com/wimg/advertise/images/8f18c7039bd269be7807718a4bf67542.jpg"
+							width="1090" height="70" alt="" title="" border="0"></a>
+					<div id="beacon_ae204c703d"
+							style="position: absolute; left: 0px; top: 0px; display: none">
+							<img
+								src="//ads.tourtips.com/www/delivery/lg.php?bannerid=1916&amp;campaignid=400&amp;zoneid=309&amp;loc=http%3A%2F%2Fwww.tourtips.com%2F&amp;referer=https%3A%2F%2Fwww.google.com%2F&amp;cb=ae204c703d"
+								width="0" height="0" alt="" style="width: 0px; height: 0px;">
+						</div></li>
+
+					<li class="panel cloned" style="width: 1090px; height: 71px;"><a
+						href="//ads.tourtips.com/www/delivery/ck.php?oaparams=2__bannerid=2038__zoneid=205__cb=461283b41d__oadest=https%3A%2F%2Fwww.hanatour.com%2Fasp%2Fevent%2Fpkgpeople%2Fpp-17000.asp"
+						target="_blank" disabled="disabled" name=""><img
+							src="//img.tourtips.com/wimg/advertise/images/b413f1c19530967f236dec748972d2da.jpg"
+							width="1090" height="70" alt="" title="" border="0"></a>
+					<div style="position: absolute; left: 0px; top: 0px; display: none">
+							<img
+								src="//ads.tourtips.com/www/delivery/lg.php?bannerid=2038&amp;campaignid=431&amp;zoneid=205&amp;loc=http%3A%2F%2Fwww.tourtips.com%2F&amp;referer=https%3A%2F%2Fwww.google.com%2F&amp;cb=461283b41d"
+								width="0" height="0" alt="" style="width: 0px; height: 0px;">
+						</div></li>
+				</ul>
+			</div>
+			<div class="anythingControls" style="display: block;">
+				<span class="arrow back"><a href="#"><span>«</span></a></span>
+				<ul class="thumbNav">
+					<li class="first"><a class="panel1" href="#"><span>1</span></a></li>
+					<li><a class="panel2 cur" href="#"><span>2</span></a></li>
+					<li class="last"><a class="panel3" href="#"><span>3</span></a></li>
+				</ul>
+				<span class="arrow forward"><a href="#"><span>»</span></a></span>
+			</div>
+		</div>
+	</div>
+	<!-- //mainAd -->
+	<!-- theme_section -->
+	<div class="theme_section">
+		<div class="title_area">
+			<h3 class="title">가을바람 타고 여행 떠날래</h3>
+			<p>가을바람 살랑살랑 여행뽐뿌 살랑살랑</p>
+		</div>
+		<!-- theme_group -->
+		<div class="theme_group">
+			<ul>
+				<li><a
+					href="http://www.tourtips.com/ap/tboard/tour_talk/?m=v&amp;aid=171308&amp;bid=1&amp;pn=1&amp;ps=20&amp;q=%EB%8C%80%EB%A7%8C">
+						<div class="thumb_wrap">
+							<span>대만여행 with 쏠찍후기</span>
+							<div class="thumb">
+								<div class="in">
+									<div class="thumb_img">
+										<img
+											src="http://thu.tourtips.com/ap/tboard/outlink/?u=Imh0dHA6Ly9pMy5ydWxpd2ViLmNvbS9pbWcvMTcvMDMvMTcvMTVhZGE5YWVjNjA0ODQ0YjAuanBnIjo6OjE6OjoxNzEzMDg%3D"
+											alt="">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="title">지금 가기 딱 좋은 대만여행의 깨알팁</div>
+				</a></li>
+				<li><a
+					href="http://www.tourtips.com/ap/tboard/tour_talk/?m=v&amp;aid=193943&amp;bid=1&amp;pn=1&amp;ps=20">
+						<div class="thumb_wrap">
+							<span>유유자적 휴식여행 in 다낭</span>
+							<div class="thumb">
+								<div class="in">
+									<div class="thumb_img">
+										<img
+											src="http://img.tourtips.com/ap/tboard/view_content/?tp=W&amp;f=34020"
+											alt="">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="title">가을맞이 몸과 마음에 휴식충전+++</div>
+				</a></li>
+				<li><a
+					href="https://www.mohaji.com/ko/magazine/incheon-kr/details/35">
+						<div class="thumb_wrap">
+							<span>모르면 아까비 feat.인천공항</span>
+							<div class="thumb">
+								<div class="in">
+									<div class="thumb_img">
+										<img
+											src="https://static.mohaji.com/contents/2019/09/05/0929sy7juk/small.png"
+											alt="">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="title">풍성한 가을만큼 풍성한 인천공항 꿀팁</div>
+				</a></li>
+			</ul>
+		</div>
+		<!-- //theme_group -->
+	</div>
+	<!-- //theme_section -->
+	<!-- best_city -->
+	<div class="best_city">
+		<div class="in">
+			<div class="title_area">
+				<h3 class="title">인기 도시 TOP 7</h3>
+				<p>어디갈지 고민이라면 인기도시를 둘러보세요.</p>
+			</div>
+			<!-- bestCity_group -->
+			<div class="bestCity_group">
+				<ul>
+					<li class="rank_01"><a href="/dest/city/1002_osaka">
+							<div>
+								<span class="cover"></span> <img
+									src="//img.tourtips.com/images/pc/main/bestCity/OSA.jpg" alt="">
+								<p>
+									<strong>오사카</strong>Osaka
+								</p>
+							</div>
+					</a></li>
+					<li class="rank_02"><a href="/dest/city/1001_hongkong">
+							<div>
+								<span class="cover"></span> <img
+									src="//img.tourtips.com/images/pc/main/bestCity/HKG.jpg" alt="">
+								<p>
+									<strong>홍콩</strong>Hongkong
+								</p>
+							</div>
+					</a></li>
+					<li class="rank_03"><a href="/dest/city/1003_fukuoka">
+							<div>
+								<span class="cover"></span> <img
+									src="//img.tourtips.com/images/pc/main/bestCity/FUK.jpg" alt="">
+								<p>
+									<strong>후쿠오카</strong>Fukuoka
+								</p>
+							</div>
+					</a></li>
+					<li class="rank_04"><a href="/dest/city/1046_danang">
+							<div>
+								<span class="cover"></span> <img
+									src="//img.tourtips.com/images/pc/main/bestCity/DAD.jpg" alt="">
+								<p>
+									<strong>다낭</strong>Danang
+								</p>
+							</div>
+					</a></li>
+					<li class="rank_05"><a href="/dest/city/1004_taipei">
+							<div>
+								<span class="cover"></span> <img
+									src="//img.tourtips.com/images/pc/main/bestCity/TPE.jpg" alt="">
+								<p>
+									<strong>타이베이</strong>Taipei
+								</p>
+							</div>
+					</a></li>
+					<li class="rank_06"><a href="/dest/city/1024_guam">
+							<div>
+								<span class="cover"></span> <img
+									src="//img.tourtips.com/images/pc/main/bestCity/GUM.jpg" alt="">
+								<p>
+									<strong>괌</strong>Guam
+								</p>
+							</div>
+					</a></li>
+					<li class="rank_07"><a href="/dest/city/1014_paris">
+							<div>
+								<span class="cover"></span> <img
+									src="//img.tourtips.com/images/pc/main/bestCity/PAR.jpg" alt="">
+								<p>
+									<strong>파리</strong>Paris
+								</p>
+							</div>
+					</a></li>
+
+				</ul>
+			</div>
+		</div>
+		<!-- //bestCity_group -->
+	</div>
+	<!-- //best_city -->
+	<!-- special_offers -->
+	<div class="special_offers">
+		<div class="title_area">
+			<h3 class="title">추천 특가</h3>
+			<p>
+				여행 갈 땐 모하지<br>MD 추천 특가 모음
+			</p>
+		</div>
+		<!-- special_group -->
+		<div class="special_group">
+			<ul>
+				<li><a
+					href="https://www.mohaji.com/ko/product/bangkok-th/MHJ-PRD29C0B4QKT?utm_source=tourtips&amp;utm_medium=mdrecommend&amp;utm_campaign=tourtips_main">
+						<div class="thumb_wrap">
+							<div class="thumb">
+								<div class="in">
+									<div class="thumb_img">
+										<img
+											src="//img.tourtips.com/images/pc/main/special_price/BKK.jpg"
+											alt="">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="flag">
+							<img src="//img.tourtips.com/images/cm/flag/flag_BKK.gif">
+						</div>
+						<div class="info">
+							<p class="city">방콕</p>
+							<p class="price">
+								최저가 <em>10,000~</em>
+							</p>
+						</div> <span class="border"></span>
+				</a></li>
+				<li><a
+					href="https://www.mohaji.com/ko/product/hawaii-us/MHJ-PRD274FB0GXM?utm_source=tourtips&amp;utm_medium=mdrecommend&amp;utm_campaign=tourtips_main">
+						<div class="thumb_wrap">
+							<div class="thumb">
+								<div class="in">
+									<div class="thumb_img">
+										<img
+											src="//img.tourtips.com/images/pc/main/special_price/Z01.jpg"
+											alt="">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="flag">
+							<img src="//img.tourtips.com/images/cm/flag/flag_Z01.gif">
+						</div>
+						<div class="info">
+							<p class="city">하와이</p>
+							<p class="price">
+								최저가 <em>1,000~</em>
+							</p>
+						</div> <span class="border"></span>
+				</a></li>
+				<li><a
+					href="https://www.mohaji.com/ko/product/da-nang-vn/MHJ-PRD448F3ZGJA?utm_source=tourtips&amp;utm_medium=mdrecommend&amp;utm_campaign=tourtips_main">
+						<div class="thumb_wrap">
+							<div class="thumb">
+								<div class="in">
+									<div class="thumb_img">
+										<img
+											src="//img.tourtips.com/images/pc/main/special_price/DAD.jpg"
+											alt="">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="flag">
+							<img src="//img.tourtips.com/images/cm/flag/flag_DAD.gif">
+						</div>
+						<div class="info">
+							<p class="city">다낭</p>
+							<p class="price">
+								최저가 <em>1,200~</em>
+							</p>
+						</div> <span class="border"></span>
+				</a></li>
+			</ul>
+		</div>
+		<!-- //special_group -->
+	</div>
+	<!-- //special_offers -->
+	<!-- free_event -->
+	<div class="free_event">
+		<h3 class="title">무료 이벤트</h3>
+		<div class="freeEventArea">
+			<ul>
+				<li>
+					<div class="freeEvent show">
+						<div class="preview">
+							<span class="mark finish">응모마감</span>
+							<!--i class="mark">공연</i-->
+							<span class="thumb"><img
+								src="//img.tourtips.com/ap/tevent/free_thumb/?tt=w&amp;tn=1576802290&amp;c=1578629975"
+								alt="빅피쉬"></span> <span class="cover">
+								<!-- for ui -->
+							</span>
+						</div>
+						<div class="eventInfo">
+							<strong class="title">빅피쉬</strong>
+							<ul>
+								<li><strong>응모기간</strong>
+								<p>2019.12.20~2020.01.09</p></li>
+								<li><strong>당첨내역</strong>
+								<p>1명(1인 2매/개)</p></li>
+							</ul>
+						</div>
+						<div class="eventInfoBottom">
+							<p class="totalCount">
+								응모 <em>13,752</em>
+							</p>
+							<span class="try_event">응모하기</span>
+						</div>
+					</div> <a href="/ap/tevent/main/" class="freeEventLink" title="빅피쉬 바로가기">
+						<span class="border"></span>
+				</a>
+				</li>
+				<li>
+					<div class="freeEvent show">
+						<div class="preview">
+							<span class="mark finish">응모마감</span>
+							<!--i class="mark">공연</i-->
+							<span class="thumb"><img
+								src="//img.tourtips.com/ap/tevent/free_thumb/?tt=w&amp;tn=1571893850&amp;c=1572834483"
+								alt="드라큘라"></span> <span class="cover">
+								<!-- for ui -->
+							</span>
+						</div>
+						<div class="eventInfo">
+							<strong class="title">드라큘라</strong>
+							<ul>
+								<li><strong>응모기간</strong>
+								<p>2019.10.24~2019.11.02</p></li>
+								<li><strong>당첨내역</strong>
+								<p>3명(1인 2매/개)</p></li>
+							</ul>
+						</div>
+						<div class="eventInfoBottom">
+							<p class="totalCount">
+								응모 <em>16,247</em>
+							</p>
+							<span class="try_event">응모하기</span>
+						</div>
+					</div> <a href="/ap/tevent/main/" class="freeEventLink" title="드라큘라 바로가기">
+						<span class="border"></span>
+				</a>
+				</li>
+				<li>
+					<div class="freeEvent show">
+						<div class="preview">
+							<span class="mark finish">응모마감</span>
+							<!--i class="mark">공연</i-->
+							<span class="thumb"><img
+								src="//img.tourtips.com/ap/tevent/free_thumb/?tt=w&amp;tn=1562746349&amp;c=1566276071"
+								alt="시라노"></span> <span class="cover">
+								<!-- for ui -->
+							</span>
+						</div>
+						<div class="eventInfo">
+							<strong class="title">시라노</strong>
+							<ul>
+								<li><strong>응모기간</strong>
+								<p>2019.07.10~2019.08.11</p></li>
+								<li><strong>당첨내역</strong>
+								<p>3명(1인 2매/개)</p></li>
+							</ul>
+						</div>
+						<div class="eventInfoBottom">
+							<p class="totalCount">
+								응모 <em>10,986</em>
+							</p>
+							<span class="try_event">응모하기</span>
+						</div>
+					</div> <a href="/ap/tevent/main/" class="freeEventLink" title="시라노 바로가기">
+						<span class="border"></span>
+				</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- //free_event -->
+	<!-- free_book -->
+	<div class="free_book">
+		<div class="in">
+			<h3>투어팁스 무료 가이드북</h3>
+			<div class="count_area">
+				<ul>
+					<li><i></i><em>52</em><span>도시</span></li>
+					<li><i></i><em>7,072,040</em><span>다운로드</span></li>
+				</ul>
+			</div>
+			<!-- book_area -->
+			<div class="book_area">
+				<!-- book_tab -->
+				<div class="book_tab">
+					<ul>
+						<li class="on"><a href="javascript:void('아시아')""="">아시아</a></li>
+						<li><a href="javascript:void('동남아시아')">동남아시아</a></li>
+						<li><a href="javascript:void('유럽')">유럽</a></li>
+						<li><a href="javascript:void('미주')">미주</a></li>
+						<li><a href="javascript:void('남태평양')">남태평양</a></li>
+						<li><a href="javascript:void('대한민국')">대한민국</a></li>
+					</ul>
+				</div>
+				<!-- //book_tab -->
+				<!-- book_slides -->
+				<div class="book_slides">
+					<div class="book_box" style="display: block;">
+						<div class="anythingSlider anythingSlider-default"
+							style="width: 1090px; height: 211px;">
+							<div class="anythingWindow">
+								<ul id="book_01" class="anythingBase horizontal"
+									style="width: 4360px; left: -1090px;">
+									<li class="cloned panel" style="width: 1090px; height: 211px;">
+										<a 7="" href="/ap/guidebook/detail/?bookId=324"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/SHA/324_AT_1.png?v=1548900982"
+											alt="상하이 가이드북"></a> <a
+										8="" href="/ap/guidebook/detail/?bookId=320"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/BJS/320_AT_1.png?v=1548900833"
+											alt="베이징 가이드북"></a> <a
+										9="" href="/ap/guidebook/detail/?bookId=311"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/TYO/311_AT_1.png?v=1548900268"
+											alt="도쿄 가이드북 "></a> <a
+										10="" href="/ap/guidebook/detail/?bookId=308"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/TPE/308_AT_1.png?v=1548900539"
+											alt="타이베이 가이드북"></a> <a
+										11="" href="/ap/guidebook/detail/?bookId=302"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/FUK/302_AT_1.png?v=1548900088"
+											alt="후쿠오카 가이드북"></a> <a
+										12="" href="/ap/guidebook/detail/?bookId=77"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/OSA/77_AT_1.png?v=1548899829"
+											alt="오사카 가이드북"></a> <a
+										13="" href="/ap/guidebook/detail/?bookId=219"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/HKG/219_AT_1.png?v=1566898266"
+											alt="홍콩 가이드북"></a>
+									</li>
+									<li class="panel activePage"
+										style="width: 1090px; height: 211px;"><a
+										0="" href="/ap/guidebook/detail/?bookId=386"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/OKA/386_AT_1.png?v=1548900411"
+											alt="오키나와 가이드북"></a> <a
+										1="" href="/ap/guidebook/detail/?bookId=380"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/SIA/380_AT_1.png?v=1548901322"
+											alt="서안 가이드북"></a> <a
+										2="" href="/ap/guidebook/detail/?bookId=374"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/DYG/374_AT_1.png?v=1548901250"
+											alt="장가계 가이드북"></a> <a
+										3="" href="/ap/guidebook/detail/?bookId=368"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/HSH/368_AT_1.png?v=1548901171"
+											alt="황산 가이드북"></a> <a
+										4="" href="/ap/guidebook/detail/?bookId=354"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/KHH/354_AT_1.png?v=1548900652"
+											alt="가오슝 가이드북"></a> <a
+										5="" href="/ap/guidebook/detail/?bookId=352"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/TAO/352_AT_1.png?v=1548901087"
+											alt="칭다오 가이드북"></a> <a
+										6="" href="/ap/guidebook/detail/?bookId=333"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/MFM/333_AT_1.png?v=1548899585"
+											alt="마카오 가이드북"></a></li>
+									<li class="panel" style="width: 1090px; height: 211px;"><a
+										7="" href="/ap/guidebook/detail/?bookId=324"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/SHA/324_AT_1.png?v=1548900982"
+											alt="상하이 가이드북"></a> <a
+										8="" href="/ap/guidebook/detail/?bookId=320"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/BJS/320_AT_1.png?v=1548900833"
+											alt="베이징 가이드북"></a> <a
+										9="" href="/ap/guidebook/detail/?bookId=311"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/TYO/311_AT_1.png?v=1548900268"
+											alt="도쿄 가이드북 "></a> <a
+										10="" href="/ap/guidebook/detail/?bookId=308"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/TPE/308_AT_1.png?v=1548900539"
+											alt="타이베이 가이드북"></a> <a
+										11="" href="/ap/guidebook/detail/?bookId=302"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/FUK/302_AT_1.png?v=1548900088"
+											alt="후쿠오카 가이드북"></a> <a
+										12="" href="/ap/guidebook/detail/?bookId=77"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/OSA/77_AT_1.png?v=1548899829"
+											alt="오사카 가이드북"></a> <a
+										13="" href="/ap/guidebook/detail/?bookId=219"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/HKG/219_AT_1.png?v=1566898266"
+											alt="홍콩 가이드북"></a></li>
+									<li class="cloned panel" style="width: 1090px; height: 211px;">
+										<a 0="" href="/ap/guidebook/detail/?bookId=386"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/OKA/386_AT_1.png?v=1548900411"
+											alt="오키나와 가이드북"></a> <a
+										1="" href="/ap/guidebook/detail/?bookId=380"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/SIA/380_AT_1.png?v=1548901322"
+											alt="서안 가이드북"></a> <a
+										2="" href="/ap/guidebook/detail/?bookId=374"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/DYG/374_AT_1.png?v=1548901250"
+											alt="장가계 가이드북"></a> <a
+										3="" href="/ap/guidebook/detail/?bookId=368"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/HSH/368_AT_1.png?v=1548901171"
+											alt="황산 가이드북"></a> <a
+										4="" href="/ap/guidebook/detail/?bookId=354"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/KHH/354_AT_1.png?v=1548900652"
+											alt="가오슝 가이드북"></a> <a
+										5="" href="/ap/guidebook/detail/?bookId=352"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/TAO/352_AT_1.png?v=1548901087"
+											alt="칭다오 가이드북"></a> <a
+										6="" href="/ap/guidebook/detail/?bookId=333"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/MFM/333_AT_1.png?v=1548899585"
+											alt="마카오 가이드북"></a>
+									</li>
+								</ul>
+							</div>
+							<div class="anythingControls" style="display: block;">
+								<span class="arrow back"><a href="#"><span>«</span></a></span>
+								<ul class="thumbNav">
+									<li class="first"><a class="panel1 cur" href="#"><span>1</span></a></li>
+									<li class="last"><a class="panel2" href="#"><span>2</span></a></li>
+								</ul>
+								<span class="arrow forward"><a href="#"><span>»</span></a></span>
+							</div>
+						</div>
+					</div>
+					<div class="book_box" style="display: none;">
+						<div class="anythingSlider anythingSlider-default"
+							style="width: 1090px; height: 211px;">
+							<div class="anythingWindow">
+								<ul id="book_02" class="anythingBase horizontal"
+									style="width: 4360px; left: -1090px;">
+									<li class="cloned panel" style="width: 1090px; height: 211px;">
+										<a 7="" href="/ap/guidebook/detail/?bookId=364"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/PEN/364_AT_1.png?v=1548902435"
+											alt="페낭 가이드북"></a> <a
+										8="" href="/ap/guidebook/detail/?bookId=349"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/BKI/349_AT_1.png?v=1548902346"
+											alt="코타 키나발루 가이드북"></a> <a
+										9="" href="/ap/guidebook/detail/?bookId=322"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/HKT/322_AT_1.png?v=1548901863"
+											alt="푸껫 가이드북"></a> <a
+										10="" href="/ap/guidebook/detail/?bookId=318"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/CEB/318_AT_1.png?v=1548902070"
+											alt="세부 가이드북"></a> <a
+										11="" href="/ap/guidebook/detail/?bookId=296"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/KLO/296_AT_1.png?v=1548902158"
+											alt="보라카이 가이드북"></a> <a
+										12="" href="/ap/guidebook/detail/?bookId=294"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/BKK/294_AT_1.png?v=1566899114"
+											alt="방콕 가이드북"></a> <a
+										13="" href="/ap/guidebook/detail/?bookId=145"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/SIN/145_AT_1.png?v=1561946303"
+											alt="싱가포르 가이드북"></a>
+									</li>
+									<li class="panel activePage"
+										style="width: 1090px; height: 211px;"><a
+										0="" href="/ap/guidebook/detail/?bookId=395"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/HHQ/395_AT_1.png?v=1566898948"
+											alt="후아힌 가이드북"></a> <a
+										1="" href="/ap/guidebook/detail/?bookId=384"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/SGN/384_AT_1.png?v=1548902856"
+											alt="호치민 가이드북"></a> <a
+										2="" href="/ap/guidebook/detail/?bookId=382"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/HAN/382_AT_1.png?v=1566898431"
+											alt="하노이 가이드북"></a> <a
+										3="" href="/ap/guidebook/detail/?bookId=376"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/DAD/376_AT_1.png?v=1566898838"
+											alt="다낭 가이드북"></a> <a
+										4="" href="/ap/guidebook/detail/?bookId=372"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/LA1/372_AT_1.png?v=1548902605"
+											alt="라오스 가이드북"></a> <a
+										5="" href="/ap/guidebook/detail/?bookId=370"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/MNL/370_AT_1.png?v=1548902252"
+											alt="마닐라 가이드북"></a> <a
+										6="" href="/ap/guidebook/detail/?bookId=366"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/KUL/366_AT_1.png?v=1548902517"
+											alt="쿠알라룸푸르 가이드북"></a></li>
+									<li class="panel" style="width: 1090px; height: 211px;"><a
+										7="" href="/ap/guidebook/detail/?bookId=364"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/PEN/364_AT_1.png?v=1548902435"
+											alt="페낭 가이드북"></a> <a
+										8="" href="/ap/guidebook/detail/?bookId=349"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/BKI/349_AT_1.png?v=1548902346"
+											alt="코타 키나발루 가이드북"></a> <a
+										9="" href="/ap/guidebook/detail/?bookId=322"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/HKT/322_AT_1.png?v=1548901863"
+											alt="푸껫 가이드북"></a> <a
+										10="" href="/ap/guidebook/detail/?bookId=318"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/CEB/318_AT_1.png?v=1548902070"
+											alt="세부 가이드북"></a> <a
+										11="" href="/ap/guidebook/detail/?bookId=296"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/KLO/296_AT_1.png?v=1548902158"
+											alt="보라카이 가이드북"></a> <a
+										12="" href="/ap/guidebook/detail/?bookId=294"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/BKK/294_AT_1.png?v=1566899114"
+											alt="방콕 가이드북"></a> <a
+										13="" href="/ap/guidebook/detail/?bookId=145"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/SIN/145_AT_1.png?v=1561946303"
+											alt="싱가포르 가이드북"></a></li>
+									<li class="cloned panel" style="width: 1090px; height: 211px;">
+										<a 0="" href="/ap/guidebook/detail/?bookId=395"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/HHQ/395_AT_1.png?v=1566898948"
+											alt="후아힌 가이드북"></a> <a
+										1="" href="/ap/guidebook/detail/?bookId=384"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/SGN/384_AT_1.png?v=1548902856"
+											alt="호치민 가이드북"></a> <a
+										2="" href="/ap/guidebook/detail/?bookId=382"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/HAN/382_AT_1.png?v=1566898431"
+											alt="하노이 가이드북"></a> <a
+										3="" href="/ap/guidebook/detail/?bookId=376"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/DAD/376_AT_1.png?v=1566898838"
+											alt="다낭 가이드북"></a> <a
+										4="" href="/ap/guidebook/detail/?bookId=372"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/LA1/372_AT_1.png?v=1548902605"
+											alt="라오스 가이드북"></a> <a
+										5="" href="/ap/guidebook/detail/?bookId=370"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/MNL/370_AT_1.png?v=1548902252"
+											alt="마닐라 가이드북"></a> <a
+										6="" href="/ap/guidebook/detail/?bookId=366"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/KUL/366_AT_1.png?v=1548902517"
+											alt="쿠알라룸푸르 가이드북"></a>
+									</li>
+								</ul>
+							</div>
+							<div class="anythingControls" style="display: block;">
+								<span class="arrow back"><a href="#"><span>«</span></a></span>
+								<ul class="thumbNav">
+									<li class="first"><a class="panel1 cur" href="#"><span>1</span></a></li>
+									<li class="last"><a class="panel2" href="#"><span>2</span></a></li>
+								</ul>
+								<span class="arrow forward"><a href="#"><span>»</span></a></span>
+							</div>
+						</div>
+						<script>$("#book_02").anythingSlider({animationTime:300});</script>
+					</div>
+					<div class="book_box" style="display: none;">
+						<div class="anythingSlider anythingSlider-default"
+							style="width: 1090px; height: 211px;">
+							<div class="anythingWindow">
+								<ul id="book_03" class="anythingBase horizontal"
+									style="width: 1090px; left: 0px;">
+									<li class="panel" style="width: 1090px; height: 211px;"><a
+										0="" href="/ap/guidebook/detail/?bookId=388"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/VVO/388_AT_1.png?v=1548904072"
+											alt="블라디보스토크 가이드북"></a> <a
+										1="" href="/ap/guidebook/detail/?bookId=344"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/BCN/344_AT_1.png?v=1548903753"
+											alt="바르셀로나 가이드북"></a> <a
+										2="" href="/ap/guidebook/detail/?bookId=338"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/IST/338_AT_1.png?v=1548903978"
+											alt="이스탄불 가이드북"></a> <a
+										3="" href="/ap/guidebook/detail/?bookId=331"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/HR1/331_AT_1.png?v=1548903870"
+											alt="크로아티아 가이드북"></a> <a
+										4="" href="/ap/guidebook/detail/?bookId=304"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/LON/304_AT_1.png?v=1548903606"
+											alt="런던 가이드북"></a> <a
+										5="" href="/ap/guidebook/detail/?bookId=300"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/ROM/300_AT_1.png?v=1548903428"
+											alt="로마 가이드북"></a> <a
+										6="" href="/ap/guidebook/detail/?bookId=1"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/PAR/1_AT_1.png?v=1548903235"
+											alt="파리 가이드북"></a></li>
+								</ul>
+							</div>
+							<div class="anythingControls" style="display: none;">
+								<span class="arrow back" style="display: none;"><a
+									href="#"><span>«</span></a></span>
+								<ul class="thumbNav" style="display: none;"></ul>
+								<span class="arrow forward" style="display: none;"><a
+									href="#"><span>»</span></a></span>
+							</div>
+						</div>
+						<script>$("#book_03").anythingSlider({animationTime:300});</script>
+					</div>
+					<div class="book_box" style="display: none;">
+						<div class="anythingSlider anythingSlider-default"
+							style="width: 619px; height: 211px;">
+							<div class="anythingWindow">
+								<ul id="book_04" class="anythingBase horizontal"
+									style="width: 619px; left: 0px;">
+									<li class="panel" style="width: 619px; height: 211px;"><a
+										0="" href="/ap/guidebook/detail/?bookId=326"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/Z50/326_AT_1.png?v=1548904706"
+											alt="미서부 가이드북"></a> <a
+										1="" href="/ap/guidebook/detail/?bookId=298"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/NYC/298_AT_1.png?v=1548904228"
+											alt="뉴욕 가이드북"></a> <a
+										2="" href="/ap/guidebook/detail/?bookId=292"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/Z01/292_AT_1.png?v=1566898650"
+											alt="하와이 가이드북"></a></li>
+								</ul>
+							</div>
+							<div class="anythingControls" style="display: none;">
+								<span class="arrow back" style="display: none;"><a
+									href="#"><span>«</span></a></span>
+								<ul class="thumbNav" style="display: none;"></ul>
+								<span class="arrow forward" style="display: none;"><a
+									href="#"><span>»</span></a></span>
+							</div>
+						</div>
+						<script>$("#book_04").anythingSlider({animationTime:300});</script>
+					</div>
+					<div class="book_box" style="display: none;">
+						<div class="anythingSlider anythingSlider-default"
+							style="width: 384px; height: 211px;">
+							<div class="anythingWindow">
+								<ul id="book_05" class="anythingBase horizontal"
+									style="width: 384px; left: 0px;">
+									<li class="panel" style="width: 384px; height: 211px;"><a
+										0="" href="/ap/guidebook/detail/?bookId=316"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/GUM/316_AT_1.png?v=1548904845"
+											alt="괌 가이드북"></a> <a
+										1="" href="/ap/guidebook/detail/?bookId=313"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/SYD/313_AT_1.png?v=1548904966"
+											alt="시드니 가이드북"></a></li>
+								</ul>
+							</div>
+							<div class="anythingControls" style="display: none;">
+								<span class="arrow back" style="display: none;"><a
+									href="#"><span>«</span></a></span>
+								<ul class="thumbNav" style="display: none;"></ul>
+								<span class="arrow forward" style="display: none;"><a
+									href="#"><span>»</span></a></span>
+							</div>
+						</div>
+						<script>$("#book_05").anythingSlider({animationTime:300});</script>
+					</div>
+					<div class="book_box" style="display: none;">
+						<div class="anythingSlider anythingSlider-default"
+							style="width: 1090px; height: 211px;">
+							<div class="anythingWindow">
+								<ul id="book_06" class="anythingBase horizontal"
+									style="width: 4360px; left: -1090px;">
+									<li class="cloned panel" style="width: 1090px; height: 211px;">
+										<a 7="" href="/ap/guidebook/detail/?bookId=342"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/KJO/342_AT_1.png?v=1548905236"
+											alt="경주 가이드북"></a> <a
+										8="" href="/ap/guidebook/detail/?bookId=340"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/A53/340_AT_1.png?v=1548905155"
+											alt="전주 가이드북"></a> <a
+										9="" href="/ap/guidebook/detail/?bookId=328"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/CJU/328_AT_1.png?v=1548905073"
+											alt="제주 가이드북"></a> <a
+										10="" href="/ap/guidebook/detail/?bookId=307"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/K01/307_AT_1.png?v=1548905460"
+											alt="안산 · 대부도 가이드북"></a>
+									</li>
+									<li class="panel activePage"
+										style="width: 1090px; height: 211px;"><a
+										0="" href="/ap/guidebook/detail/?bookId=391"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/GHA/391_AT_1.png?v=1554280665"
+											alt="강화 가이드북"></a> <a
+										1="" href="/ap/guidebook/detail/?bookId=378"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/K02/378_AT_1.png?v=1548906124"
+											alt="인천 중구 가이드북"></a> <a
+										2="" href="/ap/guidebook/detail/?bookId=362"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/KRG/362_AT_1.png?v=1548906042"
+											alt="강원 가이드북"></a> <a
+										3="" href="/ap/guidebook/detail/?bookId=360"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/SEL/360_AT_1.png?v=1548905869"
+											alt="서울 가이드북"></a> <a
+										4="" href="/ap/guidebook/detail/?bookId=358"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/PUS/358_AT_1.png?v=1548905612"
+											alt="부산 가이드북"></a> <a
+										5="" href="/ap/guidebook/detail/?bookId=347"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/AI2/347_AT_1.png?v=1548905394"
+											alt="화성 가이드북"></a> <a
+										6="" href="/ap/guidebook/detail/?bookId=345"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/A71/345_AT_1.png?v=1548905318"
+											alt="수원 가이드북"></a></li>
+									<li class="panel" style="width: 1090px; height: 211px;"><a
+										7="" href="/ap/guidebook/detail/?bookId=342"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/KJO/342_AT_1.png?v=1548905236"
+											alt="경주 가이드북"></a> <a
+										8="" href="/ap/guidebook/detail/?bookId=340"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/A53/340_AT_1.png?v=1548905155"
+											alt="전주 가이드북"></a> <a
+										9="" href="/ap/guidebook/detail/?bookId=328"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/CJU/328_AT_1.png?v=1548905073"
+											alt="제주 가이드북"></a> <a
+										10="" href="/ap/guidebook/detail/?bookId=307"><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/K01/307_AT_1.png?v=1548905460"
+											alt="안산 · 대부도 가이드북"></a></li>
+									<li class="cloned panel" style="width: 1090px; height: 211px;">
+										<a 0="" href="/ap/guidebook/detail/?bookId=391"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/GHA/391_AT_1.png?v=1554280665"
+											alt="강화 가이드북"></a> <a
+										1="" href="/ap/guidebook/detail/?bookId=378"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/K02/378_AT_1.png?v=1548906124"
+											alt="인천 중구 가이드북"></a> <a
+										2="" href="/ap/guidebook/detail/?bookId=362"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/KRG/362_AT_1.png?v=1548906042"
+											alt="강원 가이드북"></a> <a
+										3="" href="/ap/guidebook/detail/?bookId=360"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/SEL/360_AT_1.png?v=1548905869"
+											alt="서울 가이드북"></a> <a
+										4="" href="/ap/guidebook/detail/?bookId=358"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/PUS/358_AT_1.png?v=1548905612"
+											alt="부산 가이드북"></a> <a
+										5="" href="/ap/guidebook/detail/?bookId=347"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/AI2/347_AT_1.png?v=1548905394"
+											alt="화성 가이드북"></a> <a
+										6="" href="/ap/guidebook/detail/?bookId=345"
+										disabled="disabled" name=""><img
+											src="http://img.tourtips.com/wimg/guidebook/thumb/A71/345_AT_1.png?v=1548905318"
+											alt="수원 가이드북"></a>
+									</li>
+								</ul>
+							</div>
+							<div class="anythingControls" style="display: block;">
+								<span class="arrow back"><a href="#"><span>«</span></a></span>
+								<ul class="thumbNav">
+									<li class="first"><a class="panel1 cur" href="#"><span>1</span></a></li>
+									<li class="last"><a class="panel2" href="#"><span>2</span></a></li>
+								</ul>
+								<span class="arrow forward"><a href="#"><span>»</span></a></span>
+							</div>
+						</div>
+						<script>$("#book_06").anythingSlider({animationTime:300});</script>
+					</div>
+				</div>
+				<!-- book_slides -->
+			</div>
+			<!-- //book_area -->
+		</div>
+	</div>
+	<!-- //free_book -->
+	<!-- for_trip -->
+	<div class="for_trip">
+		<h3 class="title">투어팁스와 함께, 여행준비</h3>
+		<!-- trip_tab -->
+		<div class="trip_tab">
+			<div class="trip_menu">
+				<ul>
+					<li><a href="javascript:void('0')" class="on">하나샵</a></li>
+					<li><a href="javascript:void('0')">SM 면세점</a></li>
+				</ul>
+			</div>
+			<div class="trip_conts">
+				<div class="trip_box" style="display: block;">
+					<a
+						href="//ads.tourtips.com/www/delivery/ck.php?oaparams=2__bannerid=1726__zoneid=402__cb=825fa30728__oadest=https%3A%2F%2Fwww.hanashop.com%2F"
+						target="_blank"><img
+						src="//img.tourtips.com/wimg/advertise/images/5bb0265f3b0a7071707960d2b4295bda.png"
+						width="600" height="326" alt="" title="" border="0"></a>
+					<div id="beacon_825fa30728"
+						style="position: absolute; left: 0px; top: 0px; display: none">
+						<img
+							src="//ads.tourtips.com/www/delivery/lg.php?bannerid=1726&amp;campaignid=359&amp;zoneid=402&amp;loc=http%3A%2F%2Fwww.tourtips.com%2F&amp;referer=https%3A%2F%2Fwww.google.com%2F&amp;cb=825fa30728"
+							width="0" height="0" alt="" style="width: 0px; height: 0px;">
+					</div>
+				</div>
+				<div class="trip_box">
+					<a
+						href="//ads.tourtips.com/www/delivery/ck.php?oaparams=2__bannerid=1656__zoneid=403__cb=e94dfb3628__oadest=http%3A%2F%2Fwww.smdutyfree.com%2Fcoupon%2Fsm%2Findex_kr.html%3Fcode%3Ds004772%26utm_source%3Dpartner%26utm_medium%3Dsite%26utm_term%3Ds004772%26utm_content%3Dmain%26utm_campaign%3DCP_partner"
+						target="_blank"><img
+						src="//img.tourtips.com/wimg/advertise/images/ea17ad60993c713ae7919f545c0af7a8.jpg"
+						width="600" height="326" alt="" title="" border="0"></a>
+					<div id="beacon_e94dfb3628"
+						style="position: absolute; left: 0px; top: 0px; display: none">
+						<img
+							src="//ads.tourtips.com/www/delivery/lg.php?bannerid=1656&amp;campaignid=359&amp;zoneid=403&amp;loc=http%3A%2F%2Fwww.tourtips.com%2F&amp;referer=https%3A%2F%2Fwww.google.com%2F&amp;cb=e94dfb3628"
+							width="0" height="0" alt="" style="width: 0px; height: 0px;">
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //trip_tab -->
+		<div class="openEditor">
+			<strong>오픈에디터와 함께 만드는 <br>투어팁스 가이드북
+			</strong>
+			<p>688 명</p>
+			<span>내가 알고 있는 여행 정보를<br>많은 사람들과 나누어 보세요.
+			</span> <a href="/ap/openeditor/intro/">신청하기</a>
+		</div>
+	</div>
+	<!-- //for_trip -->
+	<!-- download_section -->
+	<div class="download_section">
+		<span class="bg_in"></span>
+		<div class="in">
+			<strong>믿을 수 있는 여행 팁, 투어팁스</strong>
+			<p>
+				투어팁스 앱에서도 여행정보를 얻을 수 있습니다.<br>모바일 투어팁스를 지금 바로 만나보세요.
+			</p>
+			<a
+				href="https://play.google.com/store/apps/details?id=com.tourtips.www"
+				class="google" target="_blank"><i></i>Google play<span></span></a> <a
+				href="https://itunes.apple.com/kr/app/tueotibseu/id1078837457?mt=8"
+				class="appstore" target="_blank"><i></i>App Store<span></span></a>
+		</div>
+	</div>
+	<!-- //download_section -->
+
+
+
+
+
+	<!-- loading v20170531 -->
+	<div class="loading" id="loading-v20170531" style="display: none;">
+		<div class="pc">
+			<img src="//img.tourtips.com/images/cm/tourtips_loding.gif">
+		</div>
+		<div class="opacity_dimmed"></div>
+	</div>
+	<!-- //loading v20170531 -->
+
+	<div id="footer">
+		<a href="#top" class="btn_top">맨 위로</a>
+		<!-- foot_top -->
+		<div class="foot_top">
+			<div class="in">
+				<div class="foot_notice">
+					<a href="//www.tourtips.com/ap/helpdesk/notice_view/?u=322"
+						target="_parent"><span class="category">공지사항</span><span>[공지]
+							티켓/투어 서비스가 모하지 서비스로 변경 오픈 안내</span></a>
+				</div>
+				<div class="tt_sns">
+					<a href="https://www.facebook.com/tourtipsguide" class="facebook"
+						target="_blank">투어팁스 페이스북</a> <a href="http://blog.tourtips.com/"
+						class="blog" target="_blank">투어팁스 블로그</a> <a
+						href="https://www.instagram.com/tourtips/" class="instagram"
+						target="_blank">투어팁스 인스타그램</a>
+				</div>
+			</div>
+		</div>
+		<!-- //foot_top -->
+		<!-- foot_bottom -->
+		<div class="foot_bottom">
+			<div class="in">
+				<!-- tt_sites -->
+				<div class="tt_sites">
+					<a href="http://open.tourtips.com/" target="_blank">오픈여행정보</a> <a
+						href="http://clipstore.tourtips.com/" target="_blank">영상클립스토어</a>
+					<div class="choose_lang">
+						<span class="selected"><img
+							src="//img.tourtips.com/images/cm/flag/flag_korea.gif"
+							alt="한국 flag">한국어</span>
+						<div class="choose_lang_layer">
+							<a href="http://www.tourtips.com"><img
+								src="//img.tourtips.com/images/cm/flag/flag_korea.gif" alt="한국">한국어</a>
+							<a href="http://china.tourtips.com"><img
+								src="//img.tourtips.com/images/cm/flag/flag_china.gif" alt="中文">중국어</a>
+						</div>
+					</div>
+				</div>
+				<!-- //tt_sites -->
+				<div class="foot_menu">
+					<a href="http://www.tourtips.com/ap/serviceinfo/terms/">이용약관</a> <a
+						href="http://www.tourtips.com/ap/serviceinfo/personal/"
+						class="privacy">개인정보처리방침</a> <a
+						href="http://www.tourtips.com/ap/serviceinfo/sitemap/">사이트맵</a> <a
+						href="http://www.tourtips.com/ap/helpdesk/main/">고객센터</a> <a
+						href="http://www.tourtips.com/ap/helpdesk/question/?t=1">광고제휴문의</a>
+					<a href="/ap/donate/main/" class="suport_tt">투어팁스 응원하기</a>
+				</div>
+				<div class="foot_info">
+					㈜ 투어팁스 / 대표이사 유은실 /
+					<address>서울시 종로구 삼봉로 94</address>
+					<br> 사업자등록번호 101-86-73232 / 통신판매업 신고번호 : 2016-서울종로-0248 / <a
+						href="http://www.ftc.go.kr/info/bizinfo/communicationView.jsp?apv_perm_no=2016300016930200248&amp;area1=&amp;area2=&amp;currpage=1&amp;searchKey=04&amp;searchVal=1018673232&amp;stdate=&amp;enddate"
+						target="_blank">사업자 정보 확인</a><br> 대표번호 02-6325-5201 / FAX
+					070-7758-5221 / 대표메일 tourtips@tourtips.com<br> copyright ©
+					TOURTIPS Inc. All rights Reserved.
+				</div>
+			</div>
+		</div>
+		<!-- //foot_bottom -->
+	</div>
+	<!-- //footer -->
+</div>
