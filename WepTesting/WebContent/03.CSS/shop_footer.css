@@ -1,0 +1,29 @@
+@CHARSET "UTF-8";
+footer{
+	border: 0px solid red;
+	width: 1024px; margin: 0px; auto;
+	
+}
+footer > .office > ul {
+	border: 0px solid #CCCCCC;
+	overflow: hidden;
+	text-align: center;
+	 
+}
+
+footer > .office li{
+	border: 1px solid #CCCCCC;
+	height:80px; line-height:80px;
+	float: left;
+	border-left-width: 0px;
+	
+}
+
+footer > .copy {
+	border: 1px solid #CCCCCC;
+	text-align: center;
+	height:40px; line-height:40px;
+	background-color: black;
+	margin-top: 5px;
+	margin-bottom: 20px;
+}
