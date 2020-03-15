@@ -1,0 +1,130 @@
+@CHARSET "UTF-8";
+section{
+	border: 1px solid red; 
+	margin: 0px auto;
+}
+section #title{
+	border: 1px solid ;
+	width: 1324px; height: 590px;
+	background-image: url("https://i.ytimg.com/vi/f-NLO_QSQFE/maxresdefault.jpg"); 
+	background-repeat:no-repeat;
+	background-size : 1324px 590px;
+	box-sizing:border-box;
+	margin: 0px auto;
+	
+}
+
+section > #title strong{
+	font-weight:normal;
+	font-size: 50px;
+	display:block;
+	color: #FFFFFF;
+	font-weight: 300px;
+	letter-spacing: -1px;
+	border: 0px solid blue;
+	margin-top: 250px;
+	margin-left: 5px;
+	
+}
+
+section > #title em{
+	font-style: normal;
+	display: block;
+	font-size: 78px;
+	font-weight: 700;
+	margin-top: 14px;
+	margin-left: 5px; 
+}
+
+section > #title > p{
+	background-image: url("//img.tourtips.com/images/pc/main/txt_defaultcopy.png");
+	background-repeat: no-repeat; 
+	width: 200px; height: 60px;
+	margin-left: 5px;
+	
+	
+}
+
+section > #contry_quickmenu{
+	overflow: hidden;
+}
+
+section > #contry_quickmenu ul{
+	border: 0px solid blue;
+	width: 1324px;
+	margin: 0px auto;
+	padding: 0px; 
+	text-align: center;
+	background: #FFFFFF;
+	overflow:hidden;
+	
+	
+}
+
+section > #contry_quickmenu ul li{
+	border-left: 1px solid #c1c1c1;
+	border-right: 1px solid #c1c1c1;
+	border-bottom: 1px solid #c1c1c1;
+	width: 220.6px; height: 130px;
+	line-height:130px;
+	position: relative;
+	float: left;
+	display:inline-block;
+	font-weight:bold;
+	box-sizing: border-box;
+}
+section > #contry_quickmenu ul li span{
+	display: block;
+	width: 52px;
+	height: 50px;
+	margin: 0px auto;
+}
+
+section #ticket{
+	border: 0px solid black;
+	width: 1324px; height: 263px;
+	margin: 0px auto;
+}
+
+section #ticket ul{
+	border: 1px solid blue;
+	width: 404px; 
+	height: 60px;
+	line-height:60px;
+	text-align:center;
+	padding: 0px;
+	margin-top: 40px;
+}
+section #ticket ul li img{
+	border: 0px solid blue;
+	position: absolute;
+	top: 980px; right: 300px;
+}
+section #ticket ul li{
+	border: 0px solid green;
+	width: 202px; height: 60px;
+	box-sizing: border-box;
+	float: left;
+	background: #FFFFFF;
+}
+
+section #ticket ul li a{
+	color: black;
+	font-weight: bold;
+}
+
+section #ticket ul li:HOVER {
+	background: #FF8000;
+	
+}
+
+section #ticket ul li:HOVER a{
+	color: white;
+	
+}
+
+section #ticket ul li:HOVER img{
+	
+	
+}
+

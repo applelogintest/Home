@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="table.css">
+<script type="text/javascript">
+function postFind(){
+	window.open("post.jsp","postFind","width=350,height=400,scrollbars=yes");
+}
+</script>
+</head>
+<body>
+	<center>
+		
+			<!-- <tr><td colspan="2"><h2 align="left">일반회원 가입신청</h2></td></tr>
+			<tr>
+				<th width="15%" align="left">일반회원아이디</th>
+				<td width="85%" ><input type=text size=15> 
+							<input type="button" value="중복아이디 검색">
+				</td>
+				
+			</tr> -->
+			<h1>일반회원 가입신청</h1>
+			<!-- 데이터 전송 => form 태그 -->
+			<!-- 
+				1. method
+					= GET => 보내는 데이터를 URL뒤에 첨부
+						(default) => 단순한 데이터 전송(페이지 번호, 영화번호
+						단순한 검색)
+					= POST => 내부 네트워크를 통해서 전송
+						보안,로그인..(ID,Pwd), 데이터가 많은 경우
+				2. action : 데이터를 받는 파일
+					
+			 -->
+			 <form method="POST" action="join_ok.html" name=frm>
+			 <table id="table_content" width=700>
+			
+			<tr>
+				<th width="15%" align="left">일반회원 아이디</th>
+				<td width="85%" align="left">
+				<input type=text size=15 name=id required autocomplete="off">
+				<input type=button value="중복아이디 검색"></td>
+			</tr>
+			
+			<tr>
+				<th width="15%" align="left">일반회원 이름</th>
+				<td width="85%" align="left">
+				<input type=text size=15 name=name required autocomplete="off"></td>
+			</tr>
+			
+			<tr>
+				<th width="15%" align="left">비밀번호</th>
+				<td width="85%" align="left"><input type=password size=15>  (8~15자의 영문 대소문자,숫자,특수문자만 가능합니다)</td>
+			</tr>
+			
+			<tr>
+				<th width="15%" align="left">비밀번호확인</th>
+				<td width="85%" align="left"><input type=password size=15></td>
+			</tr>
+			
+			<tr>
+				<th width="15%" align="left">비밀번호힌트</th>
+				<td width="85%" align="left">
+					<select style="width:135px">
+						<option>--선택하세요--</option>
+						<option>어머님의 성함은?</option>
+						<option>내가 태어난 고향은?</option>
+						<option>내가 가장 아끼는 보물 1호는?</option>
+					</select>
+				</td>
+			</tr>
+			
+			<tr>
+				<th width="15%" align="left">비밀번호정답</th>
+				<td width="85%" align="left"><input type=text size=15></td>
+			</tr>
+			
+			<tr>
+				<th width="15%" align="left">전화번호</th>
+				<td width="85%" align="left"><input type=text size=5> - <input type=text size=5> - <input type=text size=5></td>
+			</tr>
+			
+			<tr>
+				<th width="15%" align="left">핸드폰번호</th>
+				<td width="85%" align="left"><input type=text size=15></td>
+			</tr>
+			
+			<tr>
+				<th width="15%" align="left">이메일주소</th>
+				<td width="85%" align="left"><input type=text size=15></td>
+			</tr>
+			
+			<tr>
+				<th width="15%" align="left">소속정보</th>
+				<td width="85%" align="left"><input type=radio checked>일반가입 <input type=radio>공공기관</td>
+			</tr>
+			
+			<tr>
+				<th width="15%" align="left">소속명</th>
+				<td width="85%" align="left"><input type=text size=15></td>
+			</tr>
+			
+			<tr>
+				<th width="15%" align="left">우편번호</th>
+				<td width="85%" align="left">
+				<input type=text size=15 readonly name="post">
+				<input type=button value="검색" onclick="postFind()"></td>
+			</tr>
+			
+			<tr>
+				<th width="15%" align="left">주소</th>
+				<td width="85%"><input type=text size=40 readonly name="addr1"></td>
+			</tr>
+			
+			<tr>
+				<th width="15%" align="left">상세주소</th>
+				<td width="85%" align="left"><input type=text size=15></td>
+			</tr>
+
+			<tr>
+				<td colspan="2" align="center">
+					<input type=submit value="가입신청">
+					<input type=button value="취소">	
+				</td>
+			</tr>
+						
+		</table>
+		</form>
+	</center>
+
+</body>
+</html>

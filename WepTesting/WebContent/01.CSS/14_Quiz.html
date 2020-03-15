@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="14_QuizStyle.css"/>
+</head>
+<body>
+<div id="sub">
+	<div class="row">
+		<div class="title">
+			<label>아이디</label>
+		</div>
+		<div class="textbox">
+			<span>* </span><input type="text" name="id" />
+			<input type="button" value="아이디중복"/>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="title">
+			<label>비밀번호</label>
+		</div>
+		<div class="textbox">
+			<span>* </span><input type="password" name="pwd"/>
+		</div>
+	</div>
+	
+	<div class="row">	
+		<div class="title">
+			<label>비밀번호확인</label>
+		</div>
+		<div class="textbox">
+			<span>* </span><input type="password" name="pwd2"/>		
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="title">
+		 	<label>이름</label>
+		</div>
+		<div class="textbox">
+			<span>* </span><input type="text" name="name"/>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="title">
+			<label>주민번호</label>
+		</div>
+		<div class="textbox">
+			<span>* </span><input type="text" name="jumin"/> 
+			<span> - </span><input type="text" name="jumin2" />
+		</div>
+	</div >
+	
+	<div class="row">
+		<div class="title">
+			<label>이메일</label>
+		</div>
+		<div class="textbox">
+			<input type="text" name="email" />
+			
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="title">
+			<label>우편번호</label>
+		</div>
+		<div class="textbox">
+			<input type="text" name="post" >
+			<input type="button" value="우편번호검색"/>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="title">
+			<label>주소</label>
+		</div>
+		<div class="textbox">
+			<input type="text" name="addr">
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="title">
+			<label>직업</label>
+		</div>
+		<div class="textbox">
+			<select ></select>
+		</div>
+	</div >
+	<div class="row">
+		<div class="title">
+			<label>메일수신</label>
+		</div>
+		<div class="textbox">
+			<input type="radio" name="check" value="yes"/><span>Yes</span>
+			<input type="radio" name="check" value="no"/><span>No</span>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="title">
+			<label>관심분야</label>
+		</div>
+		<div class="textbox">
+			<input type="checkbox" name="economy" value="economy"/><span>경제</span>
+			<input type="checkbox" name="it" value="it"/><span>IT</span>
+			<input type="checkbox" name="music" value="music"/><span>음악</span>
+			<input type="checkbox" name="art" value="art"/><span>미술</span>
+		</div>
+	</div>
+	
+	<div class="row" style="text-align: center; line-height: 50px">
+		<input type="submit" name="submit" value="가입"/>
+		<input type="reset" name="reset" value="취소"/>
+	</div>
+</div>
+</body>
+</html>

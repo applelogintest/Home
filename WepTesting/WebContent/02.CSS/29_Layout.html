@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>레이 아웃</title>
+<style type="text/css">
+*{
+	font-weight: bold;
+}
+ div{
+ 	
+ 	border: 1px solid #CCCCCC;
+ 	margin: 5px; text-align: center;
+ }
+ 
+ #con{
+ 	width:80%;
+ 	margin:0px auto;  
+ }
+ 
+ #con > #header{
+ 	height: 250px; line-height: 250px;
+ 	font-size: 2.0em;
+ }
+ 
+ #con > #nav
+ {
+ 	height: 200px;
+ 	overflow: hidden;
+ }
+ 
+ #con > #nav > p{
+ 	font-size: 1.5em;
+ 	
+ }
+ 
+
+ 
+ #con > #nav > ul > li{
+ 	width: 260px; height: 40px;
+ 	border: 1px solid #DDDDDD;
+ 	float: left;
+ 	list-style-type: none;
+ 	line-height: 40px;
+ 	text-align: center;
+ 	font-size: 18px; border-left-width: 0px; 
+ }
+ 
+ #con > #wrap{
+ 	overflow: hidden;
+ 	
+ 	
+ }
+ #con > #wrap > #content{
+ 	width: 80%;
+ }
+ 
+ #con > #wrap > #banner{
+ 	width: 18%;
+ }
+ #con > #wrap > #content, #con > #wrap > #banner{
+ 	height: 500px; float: left;
+ 	line-height: 500px; font-size: 1.5em;
+ }
+ 
+ #con > #footer{
+ 	height: 300px; line-height: 300px; font-size: 2.0em;
+ }
+</style>
+</head>
+<body>
+	<div id="con">
+	       <div id="header"> HEADER</div>
+	
+	       <div id="nav">
+		           <p>NAVIGATION</p>
+		           <ul>
+		               <li style="border-left-width: 1px; margin-left: 50px; ">menu1</li>
+		               <li>menu2</li>
+		               <li>menu3</li>
+		               <li>menu4</li>
+		               <li>menu5</li>
+		           </ul>
+	       </div>
+	
+	       <div id="wrap">
+	           <div id="content"> CONTENT </div>
+	           <div id="banner"> BANNER </div>
+	       </div>
+	
+	       <div id="footer">FOOTER</div>
+	</div>
+</body>
+</html>

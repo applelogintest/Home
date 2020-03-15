@@ -1,0 +1,28 @@
+@CHARSET "UTF-8";
+#sub{
+	border: solid 0px black;
+	width: 590px; height: 613px;
+	margin: 0px auto;
+}
+
+#sub .row{
+	border: solid 0px black;
+	width: 600px; height: 50px;
+}
+
+#sub .title{
+	border: solid 2px black;
+	width: 180px; height: 50px;
+	line-height: 50px;
+	float: left;
+	
+}
+
+#sub .textbox{
+	border: solid 2px black;
+	width: 390px; height: 30px;
+	float: left;
+	padding: 10px;
+	
+}
+
