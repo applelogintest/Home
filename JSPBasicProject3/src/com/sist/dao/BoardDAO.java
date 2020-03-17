@@ -63,6 +63,8 @@ public class BoardDAO {
 				vo.setGroup_tab(rs.getInt(6));
 				list.add(vo);
 			}
+			
+			rs.close();
 		}catch (Exception ex) {
 			ex.printStackTrace();
 		}
