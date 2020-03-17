@@ -8,6 +8,7 @@ import com.sist.vo.AirplaneVO;
 import java.sql.*;
 
 public class AirplaneDAO {
+	/**/
 	private Connection conn;
 	private PreparedStatement ps;
 	private final String URL = "jdbc:oracle:thin:@localhost:1521:XE";
