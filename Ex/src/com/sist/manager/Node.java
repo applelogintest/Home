@@ -13,6 +13,7 @@ public class Node{
 		}
 		else if(size==1) // 중 size일때 나오는 좌석
 		{
+<<<<<<< HEAD
 			first=0; 
 			business=(int)(Math.random()*11)+10;
 			economy=(int)(Math.random()*41)+160;
@@ -23,6 +24,15 @@ public class Node{
 			first=(int)(Math.random()*6)+5; 
 			business=(int)(Math.random()*21)+30;
 			economy=(int)(Math.random()*51)+200;
+=======
+			first=0; business=(int)(Math.random()*11)+10;
+		}
+		else // 대 size일때 나오는 좌석
+		{
+			first=(int)(Math.random()*5)+5; 
+			business=(int)(Math.random()*20)+30;
+			economy=(int)(Math.random()*50)+200;
+>>>>>>> refs/remotes/origin/master
 		}
 			
 	}

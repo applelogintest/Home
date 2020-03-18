@@ -36,6 +36,7 @@ public class AirplaneManager {
 			{
 				for(int k=0; k<10; k++)
 				{
+<<<<<<< HEAD
 					result[i*planeNumberPerAireline+j*10+k]=j;
 				}
 			}
@@ -93,6 +94,55 @@ public class AirplaneManager {
 		AirplaneDAO dao = new AirplaneDAO();
 		dao.insertAirSeat(dao.airplaneAllData());
 		System.out.println("Airplane_seat Insert End...");
+=======
+					result[i*30+j*10+k]=j;
+				}
+			}
+		}
+		return result;
+	}
+	
+	public Node[] setSeat(int[] sizeTArr) //대중소 사이즈를 받아서 각 항공기에 랜덤으로 좌석수 배분
+	{
+		Node[] result= new Node[airLineArr.length*planeNumberPerAireline];
+		for(int i=0; i<sizeTArr.length; i++)
+		{
+			Node temp=new Node(sizeTArr[i]);
+			result[i]=temp;
+		}
+		return result;
+	}
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		AirplaneManager am=new AirplaneManager();
+		AirplaneDAO dao=new AirplaneDAO();
+		List<AirplaneVO> list=new ArrayList<AirplaneVO>();
+		
+		String[] airLineTArr= am.setAirLine();
+		int[] sizeTArr=am.setSize();
+		Node[] seatTArr=am.setSeat(sizeTArr);
+		for(int i=0; i<am.airLineArr.length*am.planeNumberPerAireline;i++)
+		{
+			AirplaneVO vo=new AirplaneVO();
+			
+			vo.setFirst(seatTArr[i].getFirst());
+			vo.setBusiness(seatTArr[i].getBusiness());
+			vo.setEconomy(seatTArr[i].getEconomy());
+			vo.setSizeType(sizeTArr[i]);
+			
+			list.add(vo);
+		}
+		int i=0;
+		for(AirplaneVO vo:list){
+			dao.insertAirplane(vo);
+			System.out.println(i);
+			i++;
+		}
+		System.out.println("Airplane Insert End...");
+		
+>>>>>>> refs/remotes/origin/master
 		
 	}
 

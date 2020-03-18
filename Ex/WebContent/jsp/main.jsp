@@ -19,7 +19,11 @@
 			<h3>header</h3>
 		</header>
 		
+<<<<<<< HEAD
 		<!-- 중간 content 부분   -->
+=======
+		<!-- 중간 content 부분  -->
+>>>>>>> refs/remotes/origin/master
 		<div id=content>
 			<!-- slider div -->
 			<div id=slider><h3>slider</h3></div>
