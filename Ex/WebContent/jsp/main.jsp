@@ -19,7 +19,7 @@
 			<h3>header</h3>
 		</header>
 		
-		<!-- 중간 content 부분  -->
+		<!-- 중간 content 부분   -->
 		<div id=content>
 			<!-- slider div -->
 			<div id=slider><h3>slider</h3></div>
