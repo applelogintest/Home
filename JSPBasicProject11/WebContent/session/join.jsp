@@ -19,6 +19,23 @@ function postfind(){
 function idcheck(){
 	window.open("idcheck.jsp","idcheck","width=380,height=220,scrollbars=no");
 }
+function join(){
+	/*
+		태그에 접근 : 계층구조
+			window (생략가능)
+			=======
+			   |
+			document (html전체를 가지고 있다)
+			   |
+			  form
+			   |
+		input, select, textarea
+		
+	*/
+	// 유효성 검사 => Spring에서 자세하게 배움(프로그램에 맞게 입력이 되었냐 하는 검사)
+	// document.frm.name ==> $('#name') JQuery형식
+	document.frm.submit();
+}
 </script>
 <style type="text/css">
 .row{
@@ -46,7 +63,7 @@ function idcheck(){
 	<div class="container">
 		<h1 class="text-center">회원가입</h1>
 		<div class="row">
-			<form name=frm>
+			<form name=frm action="join_ok.jsp" method="post">
 			<table class="table table-hover">
 				<tr>
 					<th width=15% class="danger text-right">ID</th>
@@ -139,7 +156,8 @@ function idcheck(){
 				
 				<tr>
 					<td colspan="2" class="text-center">
-						<input type="button" value="회원가입" class="btn btn-sm btn-primary">
+						<input type="button" value="회원가입" class="btn btn-sm btn-primary" 
+						onclick="join()">
 						<input type="button" value="취소" class="btn btn-sm btn-warning"
 						onclick="javascript:history.back()">
 					</td>

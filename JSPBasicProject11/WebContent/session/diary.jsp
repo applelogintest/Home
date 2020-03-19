@@ -98,7 +98,7 @@ function change(){
 </head>
 <body>
 	<div class="container">
-		<h1 class="text-center"><%=sy %>년<%=sm %>월<%=strDay %>일</h1>
+		<h1 class="text-center"><%=session.getAttribute("name")%>(<%=session.getAttribute("id")%>)&nbsp;<%=sy %>년<%=sm %>월<%=strDay %>일</h1>
 		<div class="row">
 			<form method="post" name="frm" action="diary.jsp">
 			<table class="table">
@@ -175,7 +175,8 @@ function change(){
 						if(i==day)
 							back="success";
 				%>
-						<td height="150" class="text-left <%=back %>" width=100 valign="top"><font color="<%=color %>"><h3><%=i %></h3></font></td>
+						<td height="150" class="text-left <%=back %>" width=100 valign="top"><h3><font color="<%=color %>">
+						<a href="diary_insert.jsp"><%=i %></a></font></h3></td>
 				<%
 						week++;
 						if(week>6)
