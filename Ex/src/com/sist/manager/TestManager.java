@@ -3,6 +3,7 @@ package com.sist.manager;
 import java.sql.*;
 import java.util.*;
 
+import com.sist.vo.AirTimeVO;
 import com.sist.vo.AirplaneVO;
 
 public class TestManager {
@@ -59,12 +60,13 @@ public class TestManager {
 		}
 	}
 	
-	public void insertStartDate(String startDate){
+	public void insertStartDate(AirTimeVO vo,int no){
 		try{
 			getConnection();
-			String sql="INSERT INTO test3(dt) VALUES(TO_DATE(?,'YYYY/MM/DD HH24:MI'))";
+			String sql="INSERT INTO airtime_table(no,plane_id,start_time,start_airport,end_airport) "
+					+ "VALUES(no,plane_id,TO_DATE(?,'YYYY/MM/DD HH24:MI'),start_airport,end_aiport)";
 			ps=conn.prepareStatement(sql);
-			ps.setString(1, startDate);
+			
 			
 			ps.executeUpdate();
 		}catch (Exception ex) {
