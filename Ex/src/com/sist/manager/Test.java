@@ -1,6 +1,7 @@
 package com.sist.manager;
 import java.sql.*;
 import java.sql.Date;
+import java.text.DecimalFormat;
 import java.util.*;
 
 import com.sist.vo.AirTimeVO;
@@ -117,7 +118,7 @@ public class Test {
 	}
 	public static void main(String[] args)
 	{
-		Test tm=new Test();
+		/*Test tm=new Test();
 		ArrayList<String> time=tm.setStartDate();
 		ArrayList<String> airport=tm.setAirport(time);
 		int random=0;
@@ -145,6 +146,7 @@ public class Test {
 			}
 			
 		}
+		*/
 		
 	}
 	

@@ -15,30 +15,31 @@ public class AirplaneManager {
 	private String minute;
 	private String[] airports={"인천 국제공항","김포 국제공항","포항 공항","제주 국제공항"};
 	private int[] monthDays={31,29,31,30,31,30,31,31,30,31,30,31};
+	private int[] randomDays;
+	private ArrayList<Integer> randCount;
 	
 	List<AirTimeVO> airTimeList=new ArrayList<AirTimeVO>();
-	ArrayList<Integer> randomCount;
+	
 	
 	public AirplaneManager(){ // 각 항공사 및 항공사 마다의 가지는 비행기수 초기화 
 		planeNumberPerAireline=30; 
-		
 		String[] line={"대한항공", "아시아나", "티웨이", "진에어", "에어서울", "에어부산", "제주항공", "이스타항공"};
 		airLineArr=line;
-		
 		randomStartDateCount=0;
 		airplaneCount=240;
-		randomCount=new ArrayList<Integer>();
+		randCount=new ArrayList<Integer>();
+		
 	}
 	
-	public ArrayList<Integer> getRandDay(int count){
-		 ArrayList<Integer> result=new ArrayList<Integer>();
+	public int[] getRandDay(int count,int month){
+		 int[] result=new int[count];
 		 for(int i=0; i<count; i++)
 		 {
-			 result.set(i, (int)(Math.random()*30)+1);
+			 result[i]=((int)(Math.random()*monthDays[month-1])+1);
 			for(int j=0; j<i; j++)
 			{
 				
-				if(result.get(i)==result.get(j))
+				if(result[i]==result[j])
 				{
 					i--;
 					break;
@@ -50,24 +51,22 @@ public class AirplaneManager {
 	}
 	public ArrayList<String> setStartDate(){
 		ArrayList<String> list=new ArrayList<String>();
-		ArrayList<Integer> getDay=new ArrayList<Integer>();
+		int monthT=4;
 		for(int i=0; i<airplaneCount; i++)
 		{
 			randomStartDateCount=(int)(Math.random()*6)+10;
-			randomCount.add(randomStartDateCount);
-			getDay=getRandDay(randomStartDateCount);
+			randomDays = getRandDay(randomStartDateCount,monthT);
+			randCount.add(randomStartDateCount);
 			
 			for(int j=0;j<randomStartDateCount;j++)
 			{
-				int monthT;
 				int dayT;
 				int hourT;
 				int minuteT;
 				
-				monthT=((int)(Math.random()*9)+4);
 				hourT=(int)(Math.random()*17)+6;
 				minuteT=(int)(Math.random()*59)+1;
-				dayT=getDay.get(j);
+				dayT=randomDays[j];
 				
 				if(monthT < 10)
 				{
@@ -109,11 +108,6 @@ public class AirplaneManager {
 				
 				list.add("2020"+month+day+hour+minute);
 				
-				
-				/*vo.setStart_time("2020"+month+day+hour+minute);
-				vo.setNo(i);
-				temp.add(vo);*/
-			
 			}
 		}
 		
@@ -174,14 +168,12 @@ public class AirplaneManager {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
-		//
+		AirplaneManager am=new AirplaneManager();
 		AirplaneDAO dao=new AirplaneDAO();
-		List<AirplaneVO> list=dao.airplaneAllData();
-		dao.insertAirSeat(list);
 		
-		/*AirplaneManager am=new AirplaneManager();
-		AirplaneDAO dao=new AirplaneDAO();
+		//비행기 만들기
+		/*
+		
 		List<AirplaneVO> list=dao.airplaneSeatData();
 		
 		String[] airLineTArr= am.setAirLine();
@@ -206,19 +198,26 @@ public class AirplaneManager {
 		}
 		System.out.println("Airplane Insert End...");*/
 		
+		//좌석 추가
+		/*
+			List<AirplaneVO> list=dao.airplaneAllData();
+			dao.insertAirSeat(list);
+		*/
+		
 		//출발 시간 및 공항 데이터 넣기
-		/*ArrayList<String> time=am.setStartDate();
-		ArrayList<String> airport=am.setAirport(time);
+		ArrayList<String> startTime=am.setStartDate();
+		ArrayList<String> airport=am.setAirport(startTime);
 		int random=0;
 		List<AirTimeVO> list=new ArrayList<AirTimeVO>();
+		System.out.println("Airtime Insert...");
 		
 		for(int i=0; i<am.airplaneCount; i++)
 		{
-			for(int j=0; j<am.randomCount.get(i);j++)
+			for(int j=0; j<am.randCount.get(i);j++)
 			{
 				AirTimeVO vo=new AirTimeVO();
 				vo.setPlane_id(i+1);
-				vo.setStart_time(time.get(j));
+				vo.setStart_time(startTime.get(j));
 				vo.setStart_airport(airport.get(j));
 				if(airport.get(j).equals("제주 국제공항"))
 				{
@@ -230,27 +229,19 @@ public class AirplaneManager {
 					vo.setEnd_airport(am.airports[3]);
 				}
 				list.add(vo);
+				
 			}
+			System.out.println(i);
 			
-		}*/
+		}
+		System.out.println(list.size());		
 		
-		/*for(int j=0; j<list.size(); j++)
-		{
-			for(int i=0; i<list.size(); i++)
-			{
-			}
-			
-		}*/
-		
-	/*
-		System.out.println("Airtime Insert...");
 		for(AirTimeVO vo:list)
 		{
 			dao.insertAirtime(vo);
 		}
 		System.out.println("Airtime Insert End...");
 		
-		*/
+	
 	}
-
 }

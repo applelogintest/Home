@@ -8,6 +8,7 @@ import com.sist.vo.AirTimeVO;
 import com.sist.vo.AirplaneVO;
 
 import java.sql.*;
+import java.text.DecimalFormat;
 
 public class AirplaneDAO {
 	private Connection conn;
@@ -68,7 +69,8 @@ public class AirplaneDAO {
 
 		try {
 			getConnection();
-			String sql = "SELECT plane_id, first, business, economy," + "sizetype, airline " + "FROM airplane";
+			String sql = "SELECT plane_id, first, business, economy,sizetype,airline "
+					+ "FROM airplane";
 			ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
@@ -122,9 +124,7 @@ public class AirplaneDAO {
 					AirSeatVO svo = new AirSeatVO();
 					svo.setPlane_id(vo.getPlane_id());
 					svo.setPrice(Integer.toString(tmpPrice)); // 메서드 : 들어갈 것이
-					// svo.setPrice(tmpPrice);
 					svo.setType(k);
-					// System.out.println("first literal : " + firstLiteral);
 					if (j % (vo.getSizeType() * 2 + 4) == 0 && j != 0) {
 						firstLiteral = 'A';
 						pos++;
@@ -137,7 +137,7 @@ public class AirplaneDAO {
 					/*
 					 * try { Thread.sleep(100); insertSeat(svo);
 					 * System.out.println("plane seat is created - " +
-					 * svo.getNo()); } catch (InterruptedException e) { // TODO
+					 * svo.getNo()); } catch (InterruptedException e) { 
 					 * Auto-generated catch block e.printStackTrace(); }
 					 */
 					insertSeat(svo);
@@ -147,12 +147,13 @@ public class AirplaneDAO {
 			}
 		}
 	}
-
+	
+	//좌석
 	public void insertSeat(AirSeatVO vo) {
 		try {
 			// System.out.println("insertSeat start");
 			getConnection();
-			String sql = "INSERT INTO air_seat(plane_id, no, type, price) " + "VALUES(?, ?, ?, ?)";
+			String sql = "INSERT INTO air_seat(plane_id, no, type, price) " + "VALUES(?, ?, ?, TO_CHAR(REPLACE('?',SUBSTR('?',-3),'000'),'999,999'))";
 			ps = conn.prepareStatement(sql);
 			// System.out.println("insertSeat mid");
 			ps.setInt(1, vo.getPlane_id());
@@ -319,9 +320,9 @@ public class AirplaneDAO {
 	public void insertAirtime(AirTimeVO vo) {
 		try {
 			getConnection();
-			String dateFomat = "yyyy/mm/dd hh24:mi";
-			String sql = "INSERT INTO air_time VALUES(at_no_seq.nextval,?," + "TO_DATE(?,'YYYY-MM-DD HH24:MI'),"
-					+ "TO_DATE(TO_CHAR(TO_DATE(?,'YYYY-MM-DD HH24:MI') + 1/22,'YYYY-MM-DD HH24:MI'),'YYYY-MM-DD HH24:MI'),?,?)";
+			String sql = "INSERT INTO airtime VALUES(at_no_seq.nextval,?," 
+						+ "TO_DATE(?,'YYYY-MM-DD HH24:MI'),"
+						+ "TO_DATE(TO_CHAR(TO_DATE(?,'YYYY-MM-DD HH24:MI') + 1/22,'YYYY-MM-DD HH24:MI'),'YYYY-MM-DD HH24:MI'),?,?)";
 			ps = conn.prepareStatement(sql);
 			ps.setInt(1, vo.getPlane_id());
 			ps.setString(2, vo.getStart_time());
