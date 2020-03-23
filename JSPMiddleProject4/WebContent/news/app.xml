@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans SYSTEM 'app.dtd'>
+<beans>
+	<bean class="com.sist.dao.BoardDAO" id="bdao"/>
+	<bean class="com.sist.dao.BoadrDAO" id="mdao"/>
+</beans>
