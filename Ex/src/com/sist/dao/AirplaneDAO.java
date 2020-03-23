@@ -320,7 +320,7 @@ public class AirplaneDAO {
 	public void insertAirtime(AirTimeVO vo) {
 		try {
 			getConnection();
-			String sql = "INSERT INTO airtime VALUES(at_no_seq.nextval,?," 
+			String sql = "INSERT INTO air_time VALUES(at_no_seq.nextval,?," 
 						+ "TO_DATE(?,'YYYY-MM-DD HH24:MI'),"
 						+ "TO_DATE(TO_CHAR(TO_DATE(?,'YYYY-MM-DD HH24:MI') + 1/22,'YYYY-MM-DD HH24:MI'),'YYYY-MM-DD HH24:MI'),?,?)";
 			ps = conn.prepareStatement(sql);
