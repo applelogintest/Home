@@ -177,9 +177,9 @@ public class AirplaneManager {
 		AirplaneDAO dao=new AirplaneDAO();
 		
 		//비행기 만들기
-		/*
 		
-		List<AirplaneVO> list=dao.airplaneSeatData();
+		
+		/*List<AirplaneVO> list=dao.airplaneSeatData();
 		
 		String[] airLineTArr= am.setAirLine();
 		int[] sizeTArr=am.setSize();
@@ -192,25 +192,26 @@ public class AirplaneManager {
 			vo.setBusiness(seatTArr[i].getBusiness());
 			vo.setEconomy(seatTArr[i].getEconomy());
 			vo.setSizeType(sizeTArr[i]);
+			vo.setAirline(airLineTArr[i]);
 			
 			list.add(vo);
 		}
 		int i=0;
 		for(AirplaneVO vo:list){
 			dao.insertAirplane(vo);
-			System.out.println(i);
+			System.out.println(vo.getAirline()+" ");
 			i++;
 		}
-		System.out.println("Airplane Insert End...");*/
-		
+		System.out.println("Airplane Insert End...");
+		*/
 		//좌석 추가
-		/*
+		
 			List<AirplaneVO> list=dao.airplaneAllData();
 			dao.insertAirSeat(list);
-		*/
+		
 		
 		//출발 시간 및 공항 데이터 넣기
-		ArrayList<String> startTime=am.setStartDate(); //비행기 하나당 15번 이륙 (모두 다른 날)
+		/*ArrayList<String> startTime=am.setStartDate(); //비행기 하나당 15번 이륙 (모두 다른 날)
 		System.out.println("startTime len : " + startTime.size());
 		ArrayList<String> airport=am.setAirport(startTime);
 	
@@ -218,7 +219,7 @@ public class AirplaneManager {
 		List<AirTimeVO> list=new ArrayList<AirTimeVO>();
 		System.out.println("Airtime Insert...");
 		//startTime을 모두 순회하는데, 정렬시켜서 출력
-		/*Collections.sort(startTime, );*/
+		Collections.sort(startTime, );
 		for(int i = 0; i < startTime.size(); i++){
 			startTime.get(i);
 		}
@@ -230,7 +231,7 @@ public class AirplaneManager {
 				AirTimeVO vo=new AirTimeVO();
 				vo.setPlane_id(i+1);
 				vo.setStart_time(startTime.get(k));
-				/*System.out.print(am.randCount.get(i)+" ");*/
+				System.out.print(am.randCount.get(i)+" ");
 				vo.setStart_airport(airport.get(j));
 				if(airport.get(j).equals("제주 국제공항"))
 				{
@@ -256,7 +257,7 @@ public class AirplaneManager {
 			
 			dao.insertAirtime(vo);
 		}
-		System.out.println("Airtime Insert End...");
+		System.out.println("Airtime Insert End...");*/
 		
 	
 	}
