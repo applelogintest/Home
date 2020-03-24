@@ -28,43 +28,64 @@
 		 	public List<BoardVO> boardListData(Map map)
 		 		=>selectList() 리스트로 여러개의 객체를 리턴 받을때
 	 -->  
-	 <select id="boardListData" resultSets="BoardVO" parameterType="java.util.Map">
-		SELECT no,subject,name,regdate,hit,num
+	 <select id="boardListData" resultType="BoardVO" parameterType="java.util.Map">
+		SELECT no,subject,name,regdate,hit,TO_CHAR(regdate,'YYYY-MM-DD') as dbday,num
 		FROM (SELECT no,subject,name,regdate,hit,rownum as num 
 		FROM (SELECT no,subject,name,regdate,hit
 		FROM board ORDER BY no DESC))
-		WHERE no BETWEEN #{start} AND #{end}  	 		
+		WHERE num BETWEEN #{start} AND #{end}  	 		
 	 </select>
 	 <!-- 
 	 	
 	 	public BoardVO boardDetailData(int no)
 	 	{
 	 	}
-	 	
+	 	Map map=new HashMap();
+	 	map.put("boardDetailData","SELECT * FROM board WHERE no=#{no}");
 	 	selectOne() 하나의 객체를 리턴받을때
 	  -->
+	 <select id="boardTotalPage" resultType="int">
+	 	SELECT CEIL(COUNT(*)/10.0) FROM board
+	 </select>
+	 
+	 <sql id="where-no"> <!-- 반복 제거용 sql의 중복코드를 따로 저장해서 사용가능 -->
+	 	WHERE no=#{no}
+	 </sql>
+	 
 	 <select id="boardDetailData" resultType="BoardVO" parameterType="int">
 	 	SELECT * FROM board 
-	 	WHERE no=#{no}
+	 	<include refid="where-no"/>
 	 </select>
+	 
+	 <update id="hitIncrement" parameterType="int">
+	 	UPDATE board SET
+	 	hit=hit+1
+	 	<include refid="where-no"/>
+	 </update>
 	 <!-- 
 	 	public void boardInsert(BoardVO vo)
 	  -->
 	 <insert id="boardInsert" parameterType="BoardVO">
-	 	
+	 	<selectKey keyProperty="no" resultType="int" order="BEFORE"> <!-- order="BEFORE" 먼저 수행해라 insert보다 먼저 실행됨 -->
+	 		SELECT NVL(MAX(no)+1,1) as no FROM board   <!-- ketProperty="no" 와 컬럼명이 반드시 일치해야 하기때문에 별칭을 줘서 똑같이 만든다 -->
+	 	</selectKey>
+	 	<!-- 
+	 		rs.getInt(1) => re.getInt("column명")
+	 	 -->
+	 	 INSERT INTO board VALUES(#{no},#{name},#{subject},#{content},#{pwd},SYSDATE,0) <!-- getMethod 호출    변수 호출 x -->
 	 </insert>
 	 <!-- 
 	 	public void boardUpdate(BoardVO VO)
 	  -->
 	 <update id="boardUpdate" parameterType="BoardVO">
-	 
+		UPDATE board SET name=#{name},subject=#{subject},content=#{content} WHERE no=#{no}
 	 </update>
-	 <!-- 
-	 	public void boardDelete(int no)
-	  -->
-	 <delete id="boardDelete" parameterType="int">
 	 
-	 </delete>
+	 	<!-- public void boardDelete(int no) -->
+	 
+	<!--  <delete id="boardDelete" parameterType="int">
+	 
+	 </delete> -->
   </mapper>
   
   
