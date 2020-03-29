@@ -206,15 +206,10 @@ public class AirplaneManager {
 		*/
 		//좌석 추가
 		
-<<<<<<< HEAD
 		/*List<AirplaneVO> list=dao.airplaneAllData();
 		dao.insertAirSeat(list);
 		*/
-=======
-			List<AirplaneVO> list=dao.airplaneAllData();
-			dao.insertAirSeat(list);
 		
->>>>>>> refs/remotes/origin/master
 		
 		//출발 시간 및 공항 데이터 넣기
 		/*ArrayList<String> startTime=am.setStartDate(); //비행기 하나당 15번 이륙 (모두 다른 날)
@@ -238,10 +233,10 @@ public class AirplaneManager {
 				AirTimeVO vo=new AirTimeVO();
 				vo.setPlane_id(i+1);
 				vo.setStart_time(startTime.get(k));
-<<<<<<< HEAD
-=======
+
+
 				System.out.print(am.randCount.get(i)+" ");
->>>>>>> refs/remotes/origin/master
+
 				vo.setStart_airport(airport.get(j));
 				if(airport.get(j).equals("제주 국제공항"))
 				{
@@ -257,10 +252,7 @@ public class AirplaneManager {
 				k++;
 				
 			}
-<<<<<<< HEAD
-=======
 			System.out.println();
->>>>>>> refs/remotes/origin/master
 			
 		}
 		
