@@ -13,7 +13,7 @@ import java.text.DecimalFormat;
 public class AirplaneDAO {
 	private Connection conn;
 	private PreparedStatement ps;
-	private final String URL = "jdbc:oracle:thin:@localhost:1521:XE";
+	private final String URL = "jdbc:oracle:thin:@211.238.142.210:1521:XE";
 
 	public AirplaneDAO() {
 		try {
@@ -43,7 +43,14 @@ public class AirplaneDAO {
 			ex.printStackTrace();
 		}
 	}
-
+/*
+ 	private int plane_id;
+	private int first;
+	private int business;
+	private int economy;
+	private int sizeType;
+	private String airline;
+ */
 	public void insertAirplane(AirplaneVO vo) {
 		try {
 			getConnection();
@@ -69,7 +76,7 @@ public class AirplaneDAO {
 
 		try {
 			getConnection();
-			String sql = "SELECT plane_id, first, business, economy,sizetype,airline "
+			String sql = "SELECT plane_id, first, business, economy,seattype,airline "
 					+ "FROM airplane";
 			ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
@@ -163,8 +170,12 @@ public class AirplaneDAO {
 		try {
 			// System.out.println("insertSeat start");
 			getConnection();
+<<<<<<< HEAD
 			String sql = "INSERT INTO air_seat(no, seat_no ,plane_id, type, price) "
 					+ "VALUES(as_no_seq.nextval, ?, ?, ?, TO_CHAR(REPLACE(?,SUBSTR(?,-3),'000'),'999,999'))";
+=======
+			String sql = "INSERT INTO air_seat(no,plane_id, sizetype, price) " + "VALUES(as_no_seq.nextval, ?, ?, TO_CHAR(REPLACE('?',SUBSTR('?',-3),'000'),'999,999'))";
+>>>>>>> refs/remotes/origin/master
 			ps = conn.prepareStatement(sql);
 			// System.out.println("insertSeat mid");
 			
@@ -226,21 +237,45 @@ public class AirplaneDAO {
 		return list;
 	}
 
+<<<<<<< HEAD
 	
 	// 비행기의 좌석 갯수 얻어오기
 	public List<AirplaneVO> getAirplaneId() {
 		List<AirplaneVO> list = new ArrayList<AirplaneVO>();
+=======
+	public int getRandomPrice(int type) {
+		int res = 0;
+		switch (type) {
+		case 0: // 퍼스트
+			res = (int) (Math.random() * 100000) + 300000;
+			break;
+		case 1: // 비즈니스
+			res = (int) (Math.random() * 100000) + 200000;
+			break;
+		case 2: // 이코노미
+			res = (int) (Math.random() * 50000) + 50000;
+			break;
+		}
+		return res;
+	}
+
+	// air_time 테이블에서 id와 출발일자 가져와서 테스트 하기위한 메소드
+	public List<AirTimeVO> getAirtimeTest() {
+		List<AirTimeVO> list = new ArrayList<AirTimeVO>();
+>>>>>>> refs/remotes/origin/master
 		try {
 			getConnection();
-			String sql = "SELECT plane_id, sizetype " + "FROM airplane " + "ORDER BY plane_id ASC";
+			String sql = "SELECT plane_id, SUBSTR(start_time,7,2) "
+					+ "FROM air_time "
+					+ "ORDER BY plane_id ASC";
 
 			ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 
 			while (rs.next()) {
-				AirplaneVO vo = new AirplaneVO();
+				AirTimeVO vo=new AirTimeVO();
 				vo.setPlane_id(rs.getInt(1));
-				vo.setSizeType(rs.getInt(2));
+				vo.setStart_time(rs.getString(2));
 
 				list.add(vo);
 			}
