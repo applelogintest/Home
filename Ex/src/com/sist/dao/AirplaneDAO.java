@@ -170,12 +170,8 @@ public class AirplaneDAO {
 		try {
 			// System.out.println("insertSeat start");
 			getConnection();
-<<<<<<< HEAD
 			String sql = "INSERT INTO air_seat(no, seat_no ,plane_id, type, price) "
 					+ "VALUES(as_no_seq.nextval, ?, ?, ?, TO_CHAR(REPLACE(?,SUBSTR(?,-3),'000'),'999,999'))";
-=======
-			String sql = "INSERT INTO air_seat(no,plane_id, sizetype, price) " + "VALUES(as_no_seq.nextval, ?, ?, TO_CHAR(REPLACE('?',SUBSTR('?',-3),'000'),'999,999'))";
->>>>>>> refs/remotes/origin/master
 			ps = conn.prepareStatement(sql);
 			// System.out.println("insertSeat mid");
 			
@@ -262,7 +258,6 @@ public class AirplaneDAO {
 	// air_time 테이블에서 id와 출발일자 가져와서 테스트 하기위한 메소드
 	public List<AirTimeVO> getAirtimeTest() {
 		List<AirTimeVO> list = new ArrayList<AirTimeVO>();
->>>>>>> refs/remotes/origin/master
 		try {
 			getConnection();
 			String sql = "SELECT plane_id, SUBSTR(start_time,7,2) "
