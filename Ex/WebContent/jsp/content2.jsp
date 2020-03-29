@@ -17,9 +17,8 @@
 					<img src="https://kr.000webhost.com/static/default.000webhost.com/themes-preview/travel_vacation/original/img/blog-img/<%=i+3 %>.jpg">
 				</div>
 				<div class=food_content>
-					<h3>&nbsp;No. 맛집이름</h3>
-					<span style="color: #9B9B9B">&nbsp;&nbsp;&nbsp;맛집 주소</span>
-					<pre style="white-space: pre-wrap; border: 0px;">맛집 댓글? || 맛집에 대한설명 </pre>
+					
+					<jsp:include page="food.jsp"></jsp:include>
 				</div>
 			</div>
 	<%

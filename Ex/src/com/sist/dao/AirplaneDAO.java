@@ -47,7 +47,7 @@ public class AirplaneDAO {
 	public void insertAirplane(AirplaneVO vo) {
 		try {
 			getConnection();
-			String sql = "INSERT INTO airplane VALUES(air_planeId_seq.nextval,?,?,?,?,?)";
+			String sql = "INSERT INTO airplane VALUES(ap_planeId_seq.nextval,?,?,?,?,?)";
 			ps = conn.prepareStatement(sql);
 			ps.setInt(1, vo.getFirst());
 			ps.setInt(2, vo.getBusiness());
@@ -123,52 +123,62 @@ public class AirplaneDAO {
 					 */
 					AirSeatVO svo = new AirSeatVO();
 					svo.setPlane_id(vo.getPlane_id());
-					svo.setPrice(Integer.toString(tmpPrice)); // 메서드 : 들어갈 것이
+					svo.setPrice(Integer.toString(tmpPrice)); 
 					svo.setType(k);
 					if (j % (vo.getSizeType() * 2 + 4) == 0 && j != 0) {
 						firstLiteral = 'A';
 						pos++;
 					}
 
-					svo.setNo("" + (char) firstLiteral + (pos));
+					svo.setSeat_no("" + (char) firstLiteral + (pos));
 					firstLiteral++;
-					// svo가 완성이 되었다
+					
 					// insert를 하자
-					/*
-					 * try { Thread.sleep(100); insertSeat(svo);
-					 * System.out.println("plane seat is created - " +
-					 * svo.getNo()); } catch (InterruptedException e) { 
-					 * Auto-generated catch block e.printStackTrace(); }
-					 */
 					insertSeat(svo);
-					// System.out.println("plane seat is created - " +
-					// svo.getNo());
+					
 				}
 			}
 		}
 	}
+	
+	public int getRandomPrice(int type) {
+		int res = 0;
+		switch (type) {
+		case 0: // 퍼스트
+			res = (int) (Math.random() * 100000) + 300000;
+			break;
+		case 1: // 비즈니스
+			res = (int) (Math.random() * 100000) + 200000;
+			break;
+		case 2: // 이코노미
+			res = (int) (Math.random() * 50000) + 50000;
+			break;
+		}
+		return res;
+	}
+
 	
 	//좌석
 	public void insertSeat(AirSeatVO vo) {
 		try {
 			// System.out.println("insertSeat start");
 			getConnection();
-			String sql = "INSERT INTO air_seat(plane_id, no, type, price) " + "VALUES(?, ?, ?, TO_CHAR(REPLACE('?',SUBSTR('?',-3),'000'),'999,999'))";
+			String sql = "INSERT INTO air_seat(no, seat_no ,plane_id, type, price) "
+					+ "VALUES(as_no_seq.nextval, ?, ?, ?, TO_CHAR(REPLACE(?,SUBSTR(?,-3),'000'),'999,999'))";
 			ps = conn.prepareStatement(sql);
 			// System.out.println("insertSeat mid");
-			ps.setInt(1, vo.getPlane_id());
-			// System.out.println("id : " + vo.getPlane_id());
-			ps.setString(2, vo.getNo());
-			// System.out.println("no : " + vo.getNo());
+			
+			ps.setString(1, vo.getSeat_no());
+			ps.setInt(2, vo.getPlane_id());
 			ps.setInt(3, vo.getType());
-			// System.out.println("type : " + vo.getType());
 			ps.setString(4, vo.getPrice());
-			// System.out.println("price : " + vo.getPrice());
+			ps.setString(5, vo.getPrice());
 			ps.executeUpdate();
+			
 			// System.out.println("insertSeat end");
 		} catch (Exception e) {
 			System.out.println("wrong id : " + vo.getPlane_id());
-			System.out.println(vo.getNo());
+			System.out.println(vo.getSeat_no());
 			System.out.println(vo.getType());
 			e.printStackTrace();
 		} finally {
@@ -216,22 +226,7 @@ public class AirplaneDAO {
 		return list;
 	}
 
-	public int getRandomPrice(int type) {
-		int res = 0;
-		switch (type) {
-		case 0: // 퍼스트
-			res = (int) (Math.random() * 100000) + 300000;
-			break;
-		case 1: // 비즈니스
-			res = (int) (Math.random() * 100000) + 200000;
-			break;
-		case 2: // 이코노미
-			res = (int) (Math.random() * 50000) + 50000;
-			break;
-		}
-		return res;
-	}
-
+	
 	// 비행기의 좌석 갯수 얻어오기
 	public List<AirplaneVO> getAirplaneId() {
 		List<AirplaneVO> list = new ArrayList<AirplaneVO>();
@@ -301,7 +296,7 @@ public class AirplaneDAO {
 
 			while (rs.next()) {
 				AirSeatVO vo = new AirSeatVO();
-				vo.setNo(rs.getString(1));
+				vo.setSeat_no(rs.getString(1));
 				vo.setPrice(rs.getString(2));
 
 				list.add(vo);
@@ -320,7 +315,7 @@ public class AirplaneDAO {
 	public void insertAirtime(AirTimeVO vo) {
 		try {
 			getConnection();
-			String sql = "INSERT INTO airtime VALUES(at_no_seq.nextval,?," 
+			String sql = "INSERT INTO air_time VALUES(at_no_seq.nextval,?," 
 						+ "TO_DATE(?,'YYYY-MM-DD HH24:MI'),"
 						+ "TO_DATE(TO_CHAR(TO_DATE(?,'YYYY-MM-DD HH24:MI') + 1/22,'YYYY-MM-DD HH24:MI'),'YYYY-MM-DD HH24:MI'),?,?)";
 			ps = conn.prepareStatement(sql);

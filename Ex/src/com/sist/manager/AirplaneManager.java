@@ -172,9 +172,9 @@ public class AirplaneManager {
 		AirplaneDAO dao=new AirplaneDAO();
 		
 		//비행기 만들기
-		/*
 		
-		List<AirplaneVO> list=dao.airplaneSeatData();
+		
+		/*List<AirplaneVO> list=dao.airplaneSeatData();
 		
 		String[] airLineTArr= am.setAirLine();
 		int[] sizeTArr=am.setSize();
@@ -187,6 +187,7 @@ public class AirplaneManager {
 			vo.setBusiness(seatTArr[i].getBusiness());
 			vo.setEconomy(seatTArr[i].getEconomy());
 			vo.setSizeType(sizeTArr[i]);
+			vo.setAirline(airLineTArr[i]);
 			
 			list.add(vo);
 		}
@@ -199,15 +200,16 @@ public class AirplaneManager {
 		System.out.println("Airplane Insert End...");*/
 		
 		//좌석 추가
-		/*
-			List<AirplaneVO> list=dao.airplaneAllData();
-			dao.insertAirSeat(list);
+		
+		/*List<AirplaneVO> list=dao.airplaneAllData();
+		dao.insertAirSeat(list);
 		*/
 		
 		//출발 시간 및 공항 데이터 넣기
 		ArrayList<String> startTime=am.setStartDate();
 		ArrayList<String> airport=am.setAirport(startTime);
 		int random=0;
+		int k=0;
 		List<AirTimeVO> list=new ArrayList<AirTimeVO>();
 		System.out.println("Airtime Insert...");
 		
@@ -217,7 +219,7 @@ public class AirplaneManager {
 			{
 				AirTimeVO vo=new AirTimeVO();
 				vo.setPlane_id(i+1);
-				vo.setStart_time(startTime.get(j));
+				vo.setStart_time(startTime.get(k));
 				vo.setStart_airport(airport.get(j));
 				if(airport.get(j).equals("제주 국제공항"))
 				{
@@ -229,16 +231,17 @@ public class AirplaneManager {
 					vo.setEnd_airport(am.airports[3]);
 				}
 				list.add(vo);
+				k++;
 				
 			}
-			System.out.println(i);
 			
 		}
 		System.out.println(list.size());		
-		
+		System.out.println("Airtime Insert ...");
 		for(AirTimeVO vo:list)
 		{
 			dao.insertAirtime(vo);
+			System.out.println(vo.getPlane_id());
 		}
 		System.out.println("Airtime Insert End...");
 		
