@@ -1,18 +1,29 @@
 package com.sist.vo;
 
 public class AirSeatVO {
-	private String no;
+	private int no;
+	private String seat_no;
 	private int plane_id;
 	private int type;
 	private String price;
 	private int checked;
 
-	public String getNo() {
+
+
+	public int getNo() {
 		return no;
 	}
 
-	public void setNo(String no) {
+	public void setNo(int no) {
 		this.no = no;
+	}
+
+	public String getSeat_no() {
+		return seat_no;
+	}
+
+	public void setSeat_no(String seat_no) {
+		this.seat_no = seat_no;
 	}
 
 	public int getPlane_id() {

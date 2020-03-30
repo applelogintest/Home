@@ -206,8 +206,15 @@ public class AirplaneManager {
 		*/
 		//좌석 추가
 		
+<<<<<<< HEAD
 			List<AirplaneVO> list=dao.airplaneAllData();
 			dao.insertAirSeat(list);
+		
+=======
+		/*List<AirplaneVO> list=dao.airplaneAllData();
+		dao.insertAirSeat(list);
+		*/
+>>>>>>> branch 'master' of https://github.com/kimhm93/Home.git
 		
 		
 		//출발 시간 및 공항 데이터 넣기
@@ -216,6 +223,7 @@ public class AirplaneManager {
 		ArrayList<String> airport=am.setAirport(startTime);
 	
 		int random=0;
+		int k=0;
 		List<AirTimeVO> list=new ArrayList<AirTimeVO>();
 		System.out.println("Airtime Insert...");
 		//startTime을 모두 순회하는데, 정렬시켜서 출력
@@ -231,7 +239,14 @@ public class AirplaneManager {
 				AirTimeVO vo=new AirTimeVO();
 				vo.setPlane_id(i+1);
 				vo.setStart_time(startTime.get(k));
+<<<<<<< HEAD
 				System.out.print(am.randCount.get(i)+" ");
+=======
+
+
+				System.out.print(am.randCount.get(i)+" ");
+
+>>>>>>> branch 'master' of https://github.com/kimhm93/Home.git
 				vo.setStart_airport(airport.get(j));
 				if(airport.get(j).equals("제주 국제공항"))
 				{
@@ -244,18 +259,25 @@ public class AirplaneManager {
 				}
 				k++;
 				list.add(vo);
+				k++;
 				
 			}
 			System.out.println();
 			
 		}
+<<<<<<< HEAD
 		
 		System.out.println(list.size());		
+=======
+>>>>>>> branch 'master' of https://github.com/kimhm93/Home.git
 		
+		System.out.println(list.size());		
+		System.out.println("Airtime Insert ...");
 		for(AirTimeVO vo:list)
 		{
 			
 			dao.insertAirtime(vo);
+			System.out.println(vo.getPlane_id());
 		}
 		System.out.println("Airtime Insert End...");*/
 		
