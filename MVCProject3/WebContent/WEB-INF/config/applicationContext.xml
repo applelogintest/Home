@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans> <!-- 만든 클래스를 등록하는곳 (Spring에서 등록하는 방식)-->
+	<bean id="category" class="com.sist.model.CategoryModel"/>
+	<bean id="middle" class="com.sist.model.MiddleModel"/>
+	<bean id="detail" class="com.sist.model.DetailModel"/>
+	<bean id="news" class="com.sist.model.NewsModel"/>
+</beans>
