@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	<bean id="main/home" class="com.sist.model.HomeModel"/>
+	<bean id="member/join" class="com.sist.model.JoinModel"/>
+	<bean id="movie/movie" class="com.sist.model.MovieModel"/>
+	<bean id="movie/reserve" class="com.sist.model.ReserveModel"/>
+	<bean id="board/board" class="com.sist.model.BoardModel"/>
+	<bean id="pages/mypage" class="com.sist.model.MypageModel"/>
+	<bean id="main/main" class="com.sist.model.MainModel"/>
+</beans>
