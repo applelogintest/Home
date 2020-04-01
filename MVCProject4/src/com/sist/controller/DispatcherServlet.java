@@ -11,9 +11,54 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.*;
 import com.sist.model.*;
+import com.sist.temp.Controller;
+
 import javax.xml.parsers.*;
 import org.w3c.dom.*;
-
+/*
+ 	@ => TYPE , 클래스 구분 =========> @Controller, @Repository, @Component , @Service
+ 								  // Model		// DAO	     // 일반클래스     // Manager
+ 	public class A
+ 	{
+ 		@ => FIELD (메모리 주소 전송) => @Autowired(자동 메모리 할당)
+ 		private B b;
+ 		public void setB(@ B b) => PARAMETER => @Resource
+ 		{
+ 			this.b=b;
+ 		}
+ 		
+ 		@ => CONSTRUCTOR
+ 		public A()
+ 		{
+ 			
+ 		}
+ 		
+ 		@ => METHOD
+ 		public void display()
+ 		{
+ 		
+ 		}
+ 	}
+ 	
+ 	public class A
+ 	{
+ 		public void aaa(String a,int b){}
+ 		public void bbb(String a){}
+ 		public void ccc(String a,double d){}
+ 	}
+ 	
+ 	==> a => aaa, b=> bbb , c=>ccc
+ 	==> char input(사용자 입력값)
+ 	
+ 	A aa=new A();
+ 	if(input=='a')
+ 		aa.aaa("",10);
+ 	else if(input=='b')
+ 		aa.bbb("");
+ 	else if(input=='c')
+ 		aa.ccc("",10.5);
+  
+ */
 public class DispatcherServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Map clsMap=new HashMap();
@@ -38,6 +83,12 @@ public class DispatcherServlet extends HttpServlet {
 				
 				Class clsName=Class.forName(cls);
 				Object obj=clsName.newInstance();
+				
+/*				Controller con=(Controller)clsName.getAnnotation(Controller.class);*/
+				if(clsName.isAnnotationPresent(Controller.class)==false)
+					continue;
+				
+				
 				System.out.println("id="+id);
 				System.out.println("model="+obj);
 				clsMap.put(id, obj);

@@ -7,12 +7,13 @@
   	<servlet-class>com.sist.controller.DispatcherServlet</servlet-class>
   	<init-param>
   		<param-name>contextConfigLocation</param-name>
-  		<param-value>C:\webDev\webStudy\MVCProject4\WebContent\WEB-INF\applicationContext.xml</param-value>
+  		<param-value>C:\Users\sist\git\Home\MVCProject4\WebContent\WEB-INF\applicationContext.xml</param-value>
   	</init-param>
   </servlet>
 
   <servlet-mapping>
   	<servlet-name>include</servlet-name>
+  	
   	<url-pattern>*.do</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
