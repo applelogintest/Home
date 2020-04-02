@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper 
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- 
+  	SELECT empno,ename,hiredate,dname,loc
+  	FROM emp,dept
+  	WHERE emp.deptno=dept.deptno
+  	
+  	while(rs.next())
+  	{
+  		EmpVO vo=new EmpVO();
+  		vo.setEmpno(rs.getInt("empno"))
+  		vo.setEname(rs.getString("ename"))
+  		vo.setHiredate(rs.getDate("hiredate"))
+  		vo.setDname(rs.getString("dname")) ==> vo.getDvo().setDname(rs.getString("dname"))
+  		vo.set(rs.getString("loc")) ==> vo.getDvo().setLoc(rs.getString("loc"))
+  	}
+   -->
+  
+  
+ <mapper namespace="com.sist.emp-mapper">
+ 	<resultMap type="EmpVO" id="empMap">
+ 		<result column="empno" property="empno"/>
+ 		<!-- vo.setEmpno(rs.getInt("empno"))  -->
+ 		<result column="ename" property="ename"/>
+ 		<result column="job" property="job"/>
+ 		<result column="mgr" property="mgr"/>
+ 		<result column="hiredate" property="hiredate"/>
+ 		<result column="sal" property="sal"/>
+ 		<result column="comm" property="comm"/>
+ 		<result column="deptno" property="deptno"/>
+ 		<result column="dname" property="dvo.dname"/>
+ 		<result column="loc" property="dvo.loc"/>
+ 	</resultMap> 		
+ 	<select id="empAllData" resultMap="empMap">
+		SELECT empno,ename,job,hiredate,sal,dname,loc
+		FROM emp,dept
+		WHERE emp.deptno=dept.deptno 	
+ 	</select>
+ </mapper>
