@@ -32,9 +32,9 @@ class A{
 	}
 }
 public class MainClass2 {
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
 		Scanner scan=new Scanner(System.in);
 		// a.do => aaa b.do=> bbb ...
 		System.out.print("URI주소 입력 :");

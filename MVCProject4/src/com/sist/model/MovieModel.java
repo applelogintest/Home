@@ -2,6 +2,9 @@ package com.sist.model;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.sist.temp.Controller;
+
+@Controller
 public class MovieModel implements Model {
 
 	@Override

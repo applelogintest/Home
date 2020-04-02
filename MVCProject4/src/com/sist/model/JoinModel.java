@@ -12,6 +12,7 @@ public class JoinModel implements Model {
 		request.setAttribute("msg", "회원가입");
 		request.setAttribute("main_jsp", "../member/join.jsp");
 		return "../main/main.jsp";
+		
 	}
 
 }
