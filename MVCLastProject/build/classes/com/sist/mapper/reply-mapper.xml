@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sist.mapper.reply-mapper">
+	<!-- 
+		parameterType="java.lang.String" ==> string
+		parameterType="java.lang.Integer" ==> int
+		parameterType="java.util.map" ==> hashmap
+	 -->
+	<select id="replyListData" resultType="BoardVO" parameterType="hashmap">
+		SELECT no,subject,name,regdate,hit,group_tab,num
+		FROM (SELECT no,subject,name,regdate,hit,group_tab,rownum as num
+		FROM (SELECT no,subject,name,regdate,hit,group_tab 
+		FROM replyBoard ORDER BY group_id DESC,group_step ASC))
+		WHERE num BETWEEN #{start} AND #{end}
+	</select>
+	
+	<select id="replyFindData" resultType="BoardVO" parameterType="hashmap">
+		SELECT no,subject,name,regdate,hit
+		FROM replyBoard
+		WHERE ${fs} LIKE '%'||#{ss}||'%'
+	</select>
+	
+	<select id="replyTotalPage" resultType="int">
+		SELECT CEIL(COUNT(*)/15.0) FROM replyBoard
+	</select>
+	
+	<select id="replyDetailData" resultType="BoardVO" parameterType="int">
+		SELECT no,name,subject,content,regdate,hit
+		FROM replyBoard
+		WHERE no=#{no}
+	</select>
+	
+	<update id="replyHitIncrement" parameterType="int">
+	 	UPDATE replyboard SET
+	 	hit=hit+1
+	 	WHERE no=#{no}
+	 </update>
+	 
+	 <insert id="replyInsert" parameterType="BoardVO">
+	 	<selectKey keyProperty="no" resultType="int" order="BEFORE" >
+	 		SELECT NVL(MAX(no)+1,1) as no FROM replyboard
+	 	</selectKey>
+	 	INSERT INTO replyboard(no,name,subject,content,pwd,group_id) VALUES(
+	 			#{no},
+	 			#{name},
+	 			#{subject},
+	 			#{content},
+	 			#{pwd},
+	 			(SELECT NVL(MAX(group_id)+1,1) FROM replyboard)
+	 	)
+	 </insert>
+	 
+	 <select id="replyDetailPwd" resultType="String" parameterType="int">
+	 	SELECT pwd 
+	 	FROM replyboard
+	 	WHERE no=#{no}
+	 </select>
+	 
+	 <update id="replyUpdate" parameterType="BoardVO">
+	 	UPDATE replyboard SET 
+	 			name=#{name},
+	 			subject=#{subject},
+	 			content=#{content}
+	 			
+	 	WHERE no=#{no}
+	 </update>
+	 
+	 <!-- 답변 관련 SQL -->
+	 <!-- pno의 정보를 읽는다 -->
+	 <select id="replyParentInfoData" resultType="BoardVO" parameterType="int">
+	 	SELECT group_id,group_step,group_tab 
+	 	FROM replyBoard
+	 	WHERE no=#{no}
+	 </select>
+	 
+	 <!--
+	 				gi		gs		gt 
+	 	AAA			 2		 0		 0
+	 	 => GGG		 2       1       1		
+	 	 => BBB      2		 2		 1
+	 	   => CCC	 2       3 		 2
+	 	 
+	 	=================================
+	 	DDD          1
+	 	 => EEE      1
+	 	=================================
+	 	KKK			 0
+	 	
+	  -->
+	 <update id="replyGroupStepIncrement" parameterType="BoardVO">
+	 	UPDATE replyBoard SET
+	 	group_step=group_step+1
+	 	WHERE group_id=#{group_id} AND group_step>#{group_step}
+	 </update>
+	 
+	 <insert id="replyReplyInsert" parameterType="BoardVO">
+	 	<selectKey keyProperty="no" resultType="int" order="BEFORE">
+	 		SELECT NVL(MAX(no)+1,1) as no FROM replyBoard
+	 	</selectKey>
+	 	INSERT INTO replyBoard(no,name,subject,content,pwd,group_id,group_step,group_tab,root)
+	 	VALUES(#{no},#{name},#{subject},#{content},#{pwd},
+	 		#{group_id},#{group_step},#{group_tab},#{root})
+	 </insert>
+	 
+	 <update id="replyDepthIncrement" parameterType="int">
+	 	UPDATE replyBoard SET
+	 	depth=depth+1
+	 	WHERE no=#{no}
+	 </update>
+	 
+	 <!-- delete -->
+	 <select id="replyDeleteInfoData" resultType="BoardVO" parameterType="int">
+	 	SELECT root,depth 
+	 	FROM replyBoard
+	 	WHERE no=#{no}
+	 </select>
+	 
+	 <delete id="replyDelete" parameterType="int">
+	 	DELETE FROM replyBoard
+	 	WHERE no=#{no}
+	 </delete>
+	 
+	 <update id="replySubjectUpdate" parameterType="BoardVO">
+	 	UPDATE replyBoard SET subject=#{subject},content=#{content}
+	 	WHERE no=#{no}
+	 </update>
+	 <update id="replyDepthDecrement" parameterType="int">
+	 	UPDATE replyBoard 
+	 	SET depth=depth-1
+	 	WHERE no=#{no}
+	 </update>
+</mapper>
