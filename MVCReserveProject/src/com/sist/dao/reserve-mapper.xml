@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sist.dao.reserve-mapper">
+	<select id="movieListData" resultType="MovieVO">
+		SELECT mno,title,poster,score,theaterNo
+		FROM movie
+		WHERE type=1
+	</select>
+	
+	<update id="movieTheaterUpdate" parameterType="MovieVO">
+		UPDATE movie SET 
+		theaterNo=#{theaterNo}
+		WHERE mno=#{mno}
+	</update>
+	<select id="movieTheaterData" resultType="ReserveThaterVO" parameterType="int">
+		SELECT tno,tname,tloc,tdate
+		FROM reserveTheater
+		WHERE tno=#{tno}
+	</select>
+	
+	<update id="movieDateUpdate" parameterType="ReserveThaterVO">
+		UPDATE reserveTheater SET
+		tdate=#{tdate}
+		WHERE tno=#{tno}
+	</update>
+	
+	<update id="movieTimeUpdate" parameterType="ReserveDateVO">
+		UPDATE ReserveDate SET
+		time=#{time}
+		WHERE tno=#{tno}
+	</update>
+	
+	<select id="movieTimeData" resultType="string" parameterType="int">
+		SELECT time FROM reservedate
+		WHERE tno=#{tno}
+	</select>
+	
+	<select id="movieTimeData2" resultType="string" parameterType="int">
+		SELECT time FROM reserveTime
+		WHERE tno=#{tno}
+	</select>
+	
+	<select id="movieIdCount" resultType="int" parameterType="string">
+		SELECT COUNT(*) FROM member
+		WHERE id=#{id}
+	</select>
+	
+	<select id="movieGetPwd" resultType="MemberVO" parameterType="string">
+		SELECT id,admin,name,pwd FROM member
+		WHERE id=#{id}
+	</select>
+	<!-- 
+		RNO          NUMBER        : 자동증가
+		ID           VARCHAR2(20)  : session
+		MNO          NUMBER        : 영화번호
+		TNAME        VARCHAR2(100) : 극장
+		RDATE        VARCHAR2(100) : 날짜
+		RTIME        VARCHAR2(100) : 시간
+		RINWON       VARCHAR2(20)  : 인원
+		RPRICE       VARCHAR2(20)  : 금액
+		ISRESERVE    NUMBER        : 0   => 승인 (1)
+	 -->
+	<insert id="movieReserveOk" parameterType="ReserveVO">
+		<selectKey keyProperty="rno" resultType="int" order="BEFORE">
+			SELECT NVL(MAX(rno)+1,1) as rno FROM reserve
+		</selectKey>
+		INSERT INTO reserve VALUES(
+			#{rno},#{id},#{mno},#{tname},#{rdate},#{rtime},#{rinwon},#{rprice},0
+		)
+	</insert>
+	
+	<!-- mypage -->
+	<select id="movieMyPage" resultType="ReserveVO" parameterType="string">
+		SELECT rno,mno,(SELECT poster FROM movie WHERE mno=reserve.mno) as poster,
+			   (SELECT title FROM movie WHERE mno=reserve.mno) as title,
+			   tname,rdate,rtime,rinwon,rprice,isreserve 
+		FROM reserve
+		WHERE id=#{id}
+		ORDER BY rno DESC
+	</select>
+	
+	<select id="movieAdmin" resultType="ReserveVO">
+		SELECT rno,mno,(SELECT poster FROM movie WHERE mno=reserve.mno) as poster,
+			   (SELECT title FROM movie WHERE mno=reserve.mno) as title,
+			   tname,rdate,rtime,rinwon,rprice,isreserve 
+		FROM reserve
+		ORDER BY rno DESC
+	</select>
+	
+	<update id="adminUpdate" parameterType="int">
+		UPDATE reserve SET
+		isReserve=1
+		WHERE rno=#{rno}
+	</update>
+	
+	<select id="reserveResultData" resultType="MovieVO" parameterType="int">
+		SELECT * FROM movie
+		WHERE mno=#{mno}
+	</select>
+</mapper>
